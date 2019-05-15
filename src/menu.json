@@ -1,6 +1,6 @@
 
 {
-    "breakfast": {
+    "breakfast": [{
 
         "hotCakes": {
             "price": 35
@@ -10,9 +10,9 @@
             "price": 35
         }
 
-      },
+    }],
 
-      "meals": {
+      "meals": [{
           "burgerSingle": {
             "price": 35
         },
@@ -26,9 +26,9 @@
             "price": 25
         }
 
-      },
+      }],
 
-      "beverages": {
+      "beverages": [{
 
         "juice": {
               "price": 20,
@@ -64,6 +64,6 @@
             "price": 25,
             "isBreakfast": false
         }
-      }
+      }]
 }
 
