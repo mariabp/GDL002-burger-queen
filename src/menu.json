@@ -1,0 +1,69 @@
+
+{
+    "breakfast": {
+
+        "hotCakes": {
+            "price": 35
+        },
+
+        "frenchToast": {
+            "price": 35
+        }
+
+      },
+
+      "meals": {
+          "burgerSingle": {
+            "price": 35
+        },
+          "burgerDouble": {
+            "price": 55
+        },
+          "frenchFries": {
+            "price": 30
+        },
+          "salad": {
+            "price": 25
+        }
+
+      },
+
+      "beverages": {
+
+        "juice": {
+              "price": 20,
+              "isBreakfast": true
+          },
+
+        "coffee": {
+            "price": 20,
+            "isBreakfast": true
+        },
+
+        "cafeaulait": {
+            "price": 25,
+            "isBreakfast": true
+        },
+
+        "waterSmall": {
+            "price": 15,
+            "isBreakfast": false
+        },
+
+        "waterBig": {
+            "price": 20,
+            "isBreakfast": false
+        },
+
+        "kombuchaSmall": {
+            "price": 20,
+            "isBreakfast": false
+        },
+
+        "kombuchaBig": {
+            "price": 25,
+            "isBreakfast": false
+        }
+      }
+}
+
