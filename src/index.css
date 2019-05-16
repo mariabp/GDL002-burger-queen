@@ -1,13 +1,113 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
+* {
+	box-sizing: border-box;
+	color: rgb(0, 0, 0);
+	font-family: 'Dosis', sans-serif;
+	font-size: 16pt;
+	font-weight: 300;
+	border: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+main {
+	display: grid;
+	height: 100vh;
+	width: 100vw;
+	grid-template-columns: 1rem 2fr 1rem 1.5fr 1rem;
+	grid-template-rows: 1rem 1fr 1rem;
+	grid-template-areas: ". . . . ."
+	". menu-type-container . check-container ."
+	". . . . .";
+	background: rgb(171, 169, 169);
+}
+
+.menu-type-container{
+	display: grid;
+	grid-area: menu-type-container;
+	grid-template-columns: 6rem, 6rem, 6rem;
+	grid-template-rows: 4rem;
+	grid-column-gap: 1rem;
+	grid-template-areas:"breakfast-button meals-button beverages-button"
+}
+
+.breakfast-button {
+	grid-area: breakfast-button;
+	display: flex;
+	background: rgb(162, 215, 218);
+	border-radius: 0.25rem;
+	border: 0;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.meals-button {
+	grid-area: meals-button;
+	display: flex;
+	background: rgb(173, 162, 218);
+	border-radius: 0.25rem;
+	border: 0;
+	align-items: center;
+    justify-content: center;
+}
+
+.beverages-button {
+	grid-area: beverages-button;
+	display: flex;
+	background: rgb(218, 162, 216);
+	border-radius: 0.25rem;
+	border: 0;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.check-container {
+	grid-area: check-container;
+	display: grid;
+	grid-template-columns: 0.5rem 1fr 0.5rem;
+	grid-template-rows: 0.5rem 3rem auto 4rem 0.5rem;
+	grid-template-areas: ". . ."
+						".tableId."
+						". tableOrder ."
+						".sendOrder."
+						". . .";
+	background-color: rgb(194, 194, 194);
+	border-radius: 0.25rem;
+}
+
+.tableId {
+	display: flex;
+	grid-area: tableId;
+	border-radius: 0.25rem;
+	background-color: rgb(230, 224, 165);
+	align-items: center;
+    justify-content: center;
+
+}
+
+.tableOrder {
+	display: flex;
+	grid-area: tableOrder;
+	border-radius: 0.25rem;
+	align-items: center;
+    justify-content: center;
+
+}
+
+.sendOrder{
+	display: flex;
+	grid-area:sendOrder;
+	background-color: rgb(218, 162, 172);
+	border-radius: 0.25rem;
+	font-weight: bold;
+	align-items: center;
+    justify-content: center;
+
 }
