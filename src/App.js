@@ -1,26 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {MenuOption} from './components/MenuOption';
+import { CheckContainer } from './components/CheckContainer';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Burger Queen
-        </a>
-      </header>
-    </div>
-  );
+
+	return (
+	<main>
+		<MenuOption />
+		 <CheckContainer />
+	</main>
+	)
 }
 
-export default App;
+ export default App
