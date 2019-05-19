@@ -1,23 +1,23 @@
 import React from 'react';
 
+import breakfastItems from '../menu';
 
-export function MenuOption(props) {
-console.log(props.name);
-	return (
-		<button className={props.name}>{props.display}</button>
-	)
-
+const showMenuItems = () => {
+console.log(breakfastItems);
 }
 
+ export class MenuOption extends React.Component {
 
-/* export class MenuOption extends React.Component {
-  render() {
-    return <div className="menu-type-container">
-				<button className="breakfast-button">DESAYUNOS</button>
-          		<button className="meals-button">COMIDAS</button>
-			  	<button className="beverages-button">BEBIDAS</button>
-			</div>
-  }
-}
-*/
+	render(props) {
+
+		return (
+			<button className={this.props.name} action={ showMenuItems(this.props.name) }>{this.props.display}</button>
+		)
+
+	}
+
+ }
+
+
+
 

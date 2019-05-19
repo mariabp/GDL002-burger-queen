@@ -2,18 +2,19 @@ import React from 'react';
 import {MenuOption} from './components/MenuOption';
 import { CheckContainer } from './components/CheckContainer';
 import { BreakfastItems } from './components/BreakfastItems';
+import menuTypes from './menu';
 
 
 function App() {
 
+	const typesOfMenu = menuTypes.map(type => <MenuOption key={type.id} name={type.name} display={type.display}/>)
 	return (
 	<main>
 		<div className="menu-type-container">
-		<MenuOption name="breakfast-button" display="DESAYUNOS" />
-		<MenuOption name="meals-button" display="COMIDAS" />
-		<MenuOption name="beverages-button" display="BEBIDAS" />
-
+			{typesOfMenu}
+			<div className="menu-items"></div>
 		</div>
+
 		 <CheckContainer />
 		 <BreakfastItems />
 	</main>
