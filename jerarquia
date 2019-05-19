@@ -1,0 +1,57 @@
+		Jerarquía de componentes
+
+		Menu Opciones
+
+			Desayunos
+				Hot Cakes
+				Pan Francés
+
+			Comidas
+
+				Hamburguesa Sencilla
+
+					Lenteja
+						Con queso
+						Con aguacate
+
+					Quinoa
+						Con queso
+						Con aguacate
+
+					Tempeh
+						Con queso
+						Con aguacate
+
+					Hamburguesa Doble
+
+						Lenteja
+							Con queso
+							Con aguacate
+
+						Quinoa
+							Con queso
+							Con aguacate
+
+						Tempeh
+							Con queso
+							Con aguacate
+
+					Papas fritas
+					Ensalada
+
+			Bebidas
+
+				Jugo Natural
+				Café Americano
+				Café con leche
+				Agua CH
+				Agua GDE
+				Kombucha CH
+				Kombucha GDE
+
+		Check Container
+
+			Table ID
+				Ordered Items
+					Balance
+				Confirm/Send to Kitchen

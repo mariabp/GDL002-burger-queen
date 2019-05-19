@@ -1,24 +1,37 @@
 import React from 'react';
-import {MenuOption} from './components/MenuOption';
+import SelectMealType from './components/SelectMealType';
 import { CheckContainer } from './components/CheckContainer';
-import { BreakfastItems } from './components/BreakfastItems';
-import menuTypes from './menu';
+import ShowMenuItems from './components/ShowMenuItems';
 
+class App extends React.Component {
 
-function App() {
+	constructor (props) {
 
-	const typesOfMenu = menuTypes.map(type => <MenuOption key={type.id} name={type.name} display={type.display}/>)
-	return (
-	<main>
-		<div className="menu-type-container">
-			{typesOfMenu}
-			<div className="menu-items"></div>
-		</div>
+		super(props);
 
-		 <CheckContainer />
-		 <BreakfastItems />
-	</main>
-	)
+		//this.showMenuItems = this.showMenuItems.bind(this);
+
+		this.state = {
+
+			orderCount: 0,
+
+		};
+	}
+
+	render(){
+
+		return (
+
+			<main>
+				<SelectMealType />
+				<ShowMenuItems />
+				<CheckContainer />
+			</main>
+
+		);
+	}
+
 }
+
 
  export default App

@@ -20,24 +20,31 @@ const menuTypes = [
 
 ];
 
-const MENU =  {
+const MENU =  [
 
-		breakfast: [{
+	{
+		id: 101,
+		name: 'hotCakes',
+		price: 35,
+		type: 'breakfast'
 
-			"name": "hotCakes",
-			"price": 35
+	},
+	{
+		id: 201,
+		name: 'Hamburguesa Sencilla',
+		price: 35,
+		type: 'meals'
 
-		}, {
+	},
+	{
+		id: 301,
+		name: 'Kombucha CH',
+		price: 35,
+		type: 'beverages'
 
-			"name": "frenchToast",
-			"price": 35
+	},
 
-		}
+];
 
 
-		]
-}
-
-const breakfastItems = MENU.breakfast;
-
-export default(breakfastItems, menuTypes)
+export default (MENU, menuTypes);
