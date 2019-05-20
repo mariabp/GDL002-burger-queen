@@ -1,4 +1,5 @@
 import React from 'react';
+import MenuItem from './MenuItem';
 
 class ShowMenuItems extends React.Component {
 
@@ -16,7 +17,7 @@ class ShowMenuItems extends React.Component {
 
 			<div className="menu-items">
 
-				[this.props.items]
+				{this.props.items.map(item => <MenuItem name={item.name} key={item.id}/>)}
 
 			</div>
 
