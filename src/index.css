@@ -96,7 +96,7 @@ main {
 	grid-area: check-container;
 	display: grid;
 	grid-template-columns: 0.5rem 1fr 0.5rem;
-	grid-template-rows: 0.5rem 4rem auto 4rem 0.5rem;
+	grid-template-rows: 0.5rem 4rem 1fr 4rem 0.5rem;
 	grid-template-areas:
 		". . ."
 		". table-id ."
@@ -118,11 +118,24 @@ main {
 }
 
 .table-order {
-	display: flex;
+	display: grid;
 	grid-area: table-order;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr;
+	grid-template-areas:"order-item";
 	border-radius: 0.25rem;
 	align-items: center;
-    justify-content: center;
+	justify-content: center;
+}
+
+.order-item {
+	display: block;
+	grid-area: order-item;
+	background-color: rgb(155, 155, 155);
+	padding: 0.25rem;
+	border-radius: 0.25rem;
+	align-items: center;
+	justify-content: center;
 
 }
 
