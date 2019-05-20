@@ -17,7 +17,7 @@ class ShowMenuItems extends React.Component {
 
 			<div className="menu-items">
 
-				{this.props.items.map(item => <MenuItem name={item.name} key={item.id}/>)}
+				{this.props.items.map(item => <MenuItem name={item.name} price={item.price} key={item.id}/>)}
 
 			</div>
 

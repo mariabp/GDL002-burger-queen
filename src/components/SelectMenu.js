@@ -24,34 +24,26 @@ class SelectMenu extends React.Component {
 	showBreakfast() {
 
 		this.setState({ mealType: "breakfast" });
-		console.log("test")
 
 	}
 
 	showMeals() {
 
 		this.setState({ mealType: "meals" });
-		console.log("test")
 
 	}
 
 	showBeverages() {
 
 		this.setState({ mealType: "beverages" });
-		console.log("test")
 
 	}
 
 	render() {
 
 		let menuItems = MENU.filter((element) => {
-
-			console.log(this.state.mealType);
-
 			if (element.type === this.state.mealType) {
-
-				return <MenuItem className="item" key={element.id} name={element.name} price={element.price} type={element.type}  />
-
+				return <MenuItem className="item" key={element.id} name={element} value={element.price} type={element.type} />
 			} else {
 
 				return null;
