@@ -135,3 +135,15 @@ main {
 	align-items: center;
 	justify-content: center;
 }
+
+.menu-items {
+	display: flex;
+	grid-area: menu-items;
+
+}
+
+.item {
+	border-radius: 0.25rem;
+	background: rgb(183, 218, 162);
+	margin: 0.25rem;
+}
