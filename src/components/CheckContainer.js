@@ -1,4 +1,7 @@
 import React from 'react'
+import TableOrder from './TableOrder';
+import SendOrder from './SendOrder';
+import TableId from './TableId'
 
 export class CheckContainer extends React.Component {
 
@@ -6,11 +9,11 @@ export class CheckContainer extends React.Component {
 
 			return <div className="check-container">
 
-				<div className="table-id">MESA 1</div>
+				<TableId />
 
-				<div className="table-order"></div>
+				<TableOrder />
 
-				<button className="send-order">ENVIAR COMANDA</button>
+				<SendOrder />
 
 			</div>
 
