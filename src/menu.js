@@ -1,30 +1,8 @@
-const menuTypes = [
-	{
-		id: 1,
-		name: 'breakfast',
-		display:'DESAYUNOS'
-
-	},
-	{
-		id: 2,
-		name: 'meals',
-		display:'COMIDAS'
-
-	},
-	{
-		id: 3,
-		name: 'beverages',
-		display:'BEBIDAS'
-
-	},
-
-];
-
 const MENU =  [
 
 	{
 		id: 101,
-		name: 'hotCakes',
+		name: 'Hot Cakes',
 		price: 35,
 		type: 'breakfast'
 
@@ -47,4 +25,4 @@ const MENU =  [
 ];
 
 
-export default (MENU, menuTypes);
+export default MENU;

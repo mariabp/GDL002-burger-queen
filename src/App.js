@@ -1,7 +1,6 @@
 import React from 'react';
-import SelectMealType from './components/SelectMealType';
 import { CheckContainer } from './components/CheckContainer';
-import ShowMenuItems from './components/ShowMenuItems';
+import SelectMenu from './components/SelectMenu';
 
 class App extends React.Component {
 
@@ -9,13 +8,12 @@ class App extends React.Component {
 
 		super(props);
 
-		//this.showMenuItems = this.showMenuItems.bind(this);
-
 		this.state = {
 
 			orderCount: 0,
 
 		};
+
 	}
 
 	render(){
@@ -23,15 +21,16 @@ class App extends React.Component {
 		return (
 
 			<main>
-				<SelectMealType />
-				<ShowMenuItems />
+
+				<SelectMenu />
+
 				<CheckContainer />
+
 			</main>
 
 		);
 	}
 
 }
-
 
  export default App

@@ -5,7 +5,9 @@ import React from 'react';
 	render() {
 
 		return (
-			<button className={this.props.name} key={this.props.id}>{this.props.display}</button>
+
+			<button className={this.props.name} key={this.props.id} onClick={this.props.handlerProp}>{this.props.display}</button>
+
 		)
 
 	}
@@ -13,7 +15,3 @@ import React from 'react';
  }
 
  export default MealType;
-
-
-
-

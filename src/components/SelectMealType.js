@@ -1,22 +1,33 @@
 import React from 'react'
-import menuTypes from '../menu';
 import MealType from './MealType';
-
-const typesOfMenu = menuTypes.map(type => <MealType key={type.id} name={type.name} display={type.display} onClick={this}/>)
 
 class SelectMealType extends React.Component {
 
-    render() {
-        return (
+	constructor (props) {
 
-            <div className="menu-type-container">
-			{typesOfMenu}
-		    </div>
+		super(props);
 
-        )
-    }
+		this.state = {};
+
+	}
+
+	render() {
+
+		return (
+
+			<div className="meal-type">
+
+				<MealType className="breakfast" name="breakfast" display="DESAYUNOS" handlerProp={this.props.showBreakfastProp}/>
+
+				<MealType className="meals" name="meals" display="COMIDAS" handlerProp={this.props.showMealsProp} />
+
+				<MealType className="beverages" name="beverages" display="BEBIDAS" handlerProp={this.props.showBeveragesProp} />
+
+			</div>
+
+		)
+	}
 
 }
 
 export default SelectMealType;
-

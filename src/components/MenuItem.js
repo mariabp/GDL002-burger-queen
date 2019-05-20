@@ -16,7 +16,7 @@ class MenuItem extends React.Component {
 
 			<div>
 
-				<button className={this.props.name}  key={this.props.id}>{this.props.name} - ${this.props.price}</button>
+				<button key={this.state.id}>{this.state.name} - ${this.state.price}</button>
 
 			</div>
 
