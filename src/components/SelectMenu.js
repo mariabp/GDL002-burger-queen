@@ -42,8 +42,11 @@ class SelectMenu extends React.Component {
 	render() {
 
 		let menuItems = MENU.filter((element) => {
+
 			if (element.type === this.state.mealType) {
-				return <MenuItem className="item" key={element.id} name={element} value={element.price} type={element.type} />
+
+				return <MenuItem className="item" key={element.id} name={element} price={element.price} type={element.type} addItem={this.props.addItem} />
+
 			} else {
 
 				return null;
@@ -59,7 +62,7 @@ class SelectMenu extends React.Component {
 
 				<SelectMealType showBreakfastProp={this.showBreakfast} showMealsProp={this.showMeals} showBeveragesProp={this.showBeverages} />
 
-				<ShowMenuItems className="menu-items" items={menuItems} />
+				<ShowMenuItems className="menu-items" items={menuItems} addItem={this.props.addItem} />
 
 			</div>
 

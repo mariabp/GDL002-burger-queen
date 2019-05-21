@@ -12,22 +12,16 @@ class MenuItem extends React.Component {
 						type: props.type
 					};
 
-		this.handleClick = this.handleClick.bind(this)
-
-		}
-
-	handleClick(){
-		console.log(this.state.name, this.state.price)
-
 	}
 
 	render() {
 
+		let itemDetails = this.state;
+
 		return (
 
-			<div>
-				<button className="item" key={this.state.id} onClick={this.handleClick} >{this.state.name} - ${this.state.price}</button>
-			</div>
+				<div className="item" onClick={this.props.addItem.bind(this, itemDetails)}>{this.state.name} - ${this.state.price}</div>
+
 		)
 	}
 }
