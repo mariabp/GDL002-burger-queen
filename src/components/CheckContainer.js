@@ -7,15 +7,19 @@ export class CheckContainer extends React.Component {
 
 		render() {
 
-			return <div className="check-container">
+			return (
 
-				<TableId />
+				<div className="check-container">
 
-				<TableOrder />
+					<TableId />
 
-				<SendOrder />
+					<TableOrder order={this.props.order} removeItem={this.props.removeItem} />
 
-			</div>
+					<SendOrder />
+
+				</div>
+
+			)
 
 		}
 
