@@ -31,7 +31,7 @@ main {
 	display: grid;
 	grid-area: select-menu-container;
 	grid-template-columns: 1fr;
-	grid-template-rows: 4rem 1rem 1fr;
+	grid-template-rows: 4rem 0.5rem 1fr;
 	grid-template-areas:
 		"meal-type"
 		"."
@@ -84,27 +84,29 @@ main {
 .menu-items {
 	grid-area: menu-items;
 	display: block;
-	padding: 0.5rem;
 }
 
 .item {
 	display: block;
 	padding: 0.5rem;
+	cursor: pointer;
 }
 
 .check-container {
 	grid-area: check-container;
 	display: grid;
-	grid-template-columns: 0.5rem 1fr 0.5rem;
-	grid-template-rows: 0.5rem 4rem 1fr 4rem 0.5rem;
+	grid-template-columns: 1fr;
+	grid-template-rows: 4rem 0.5rem 1fr 0.5rem 4rem;
 	grid-template-areas:
-		". . ."
-		". table-id ."
-		". table-order ."
-		". send-order ."
-		". . .";
+		"table-id"
+		"."
+		"table-order"
+		"."
+		"send-order";
+	padding: 0.5rem;
 	background-color: rgb(194, 194, 194);
 	border-radius: 0.25rem;
+	overflow: hidden;
 }
 
 .table-id {
@@ -113,30 +115,14 @@ main {
 	border-radius: 0.25rem;
 	background-color: rgb(230, 224, 165);
 	align-items: center;
-    justify-content: center;
+	justify-content: center;
 
 }
 
 .table-order {
-	display: grid;
-	grid-area: table-order;
-	grid-template-rows: 1fr;
-	grid-template-columns: 1fr;
-	grid-template-areas:"order-item";
-	border-radius: 0.25rem;
-	align-items: center;
-	justify-content: center;
-}
-
-.order-item {
 	display: block;
-	grid-area: order-item;
-	background-color: rgb(155, 155, 155);
-	padding: 0.25rem;
-	border-radius: 0.25rem;
-	align-items: center;
-	justify-content: center;
-
+	grid-area: table-order;
+	overflow-y: scroll;
 }
 
 .send-order {
@@ -150,7 +136,7 @@ main {
 }
 
 .menu-items {
-	display: flex;
+	display: block;
 	grid-area: menu-items;
 
 }
@@ -158,5 +144,5 @@ main {
 .item {
 	border-radius: 0.25rem;
 	background: rgb(183, 218, 162);
-	margin: 0.25rem;
+	margin-bottom: 0.5rem;
 }
