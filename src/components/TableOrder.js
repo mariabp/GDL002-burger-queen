@@ -5,13 +5,13 @@ class TableOrder extends React.Component {
 
 	render() {
 
-		let n = 0;
+		// let n = 0;
 
-		let mapOrder = this.props.order.map((item) => {
+		let mapOrder = this.props.order.map((item, index) => {
 
-			n++;
+			// n++;
 
-			return <OrderedItem name={item.name} price={item.price} key={n} id={n} type={item.type} removeItem={this.props.removeItem} />
+			return <OrderedItem name={item.name} index={index} price={item.price} key={index} id={index} type={item.type} removeItem={this.props.removeItem} />
 
 		});
 

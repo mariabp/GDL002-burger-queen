@@ -1,6 +1,7 @@
 import React from 'react';
 import { CheckContainer } from './components/CheckContainer';
 import SelectMenu from './components/SelectMenu';
+import { remove } from 'lodash';
 
 class App extends React.Component {
 
@@ -30,29 +31,35 @@ class App extends React.Component {
 
 	// removeItem no funciona, tiene algo que ver con las ids
 
-	removeItem(item) {
+	removeItem(index) {
 
-		console.log(item);
+		console.log('state', this.state.order);
 
-		let orderUpdate = this.state.order.filter((orderItem) => {
+		// let orderUpdate = this.state.order.filter((orderItem) => {
 
-			let orderItemIndex = this.state.order.indexOf(orderItem);
+		// 	let orderItemIndex = this.state.order.indexOf(orderItem) + 1;
 
-			console.log(orderItemIndex);
+		// 	console.log(orderItem);
 
-			if (orderItemIndex !== item.id) {
+		// 	if (orderItemIndex !== item.id) {
 
-				return orderItem;
+		// 		return orderItem;
 
-			} else {
+		// 	} else {
 
-				return null;
+		// 		return null;
 
-			}
+		// 	}
 
+		// });
+		let stateOrder = [...this.state.order];
+		remove(stateOrder, (order, stateIndex) => {
+			// console.log(stateIndex, index, stateIndex === index);
+			return stateIndex === index;
 		});
+		this.setState({ order: stateOrder });
 
-		this.setState({ order: orderUpdate })
+		// stateOrder = [...stateOrder.slice(0,index), ...stateOrder.slice(index, -1)];
 
 	}
 

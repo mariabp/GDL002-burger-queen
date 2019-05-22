@@ -16,15 +16,19 @@ class OrderedItem extends React.Component {
 
 	render() {
 
-		let itemDetails = this.state;
+	//	let itemDetails = this.state;
 
 		return (
 
-				<div className="item" onClick={this.props.removeItem.bind(this, itemDetails)}>{this.state.id}. {this.state.name} - ${this.state.price}</div>
+				<div className="item" onClick={() => this.props.removeItem(this.props.index)}>{this.props.id}. {this.props.name} - ${this.props.price}</div>
 
 		)
 
 	}
 }
+
+// const OrderedItem = () => {
+
+// }
 
 export default OrderedItem;
