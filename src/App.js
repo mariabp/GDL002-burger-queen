@@ -34,7 +34,7 @@ class App extends React.Component {
 
 		let stateOrder = [...this.state.order];
 		remove(stateOrder, (order, stateIndex) => {
-			// console.log(stateIndex, index, stateIndex === index);
+
 			return stateIndex === index;
 		});
 
