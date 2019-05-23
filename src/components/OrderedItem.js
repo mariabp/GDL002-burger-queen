@@ -1,22 +1,9 @@
 import React from 'react';
+import './OrderedItem.css';
 
 class OrderedItem extends React.Component {
 
-	// constructor(props) {
-
-	// 	super(props);
-
-	// // 	this.state = { 	id: props.id,
-	// // 					name: props.name,
-	// // 					price: props.price,
-	// // 					type: props.type
-	// // 				};
-
-	// // }
-
 	render() {
-
-	//	let itemDetails = this.state;
 
 		return (
 

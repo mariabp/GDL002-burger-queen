@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './TableId.css';
 class TableId extends React.Component {
 
 	render() {

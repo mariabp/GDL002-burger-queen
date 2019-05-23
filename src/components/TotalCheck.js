@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './TotalCheck.css';
 
 class TotalCheck extends React.Component {
 

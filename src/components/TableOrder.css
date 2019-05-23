@@ -1,0 +1,16 @@
+.table-order {
+	grid-area: table-order;
+	display: grid;
+	grid-template-rows: auto 2rem 1rem 4rem;
+	grid-template-areas:
+		"show-ordered-item"
+		"total-check"
+		"."
+		"send-order";
+	overflow-y: scroll;
+}
+
+.show-ordered-item {
+    grid-area: show-ordered-item;
+    overflow-y: scroll;
+}

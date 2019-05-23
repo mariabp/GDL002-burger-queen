@@ -1,4 +1,5 @@
 import React from 'react';
+import './TableOrder.css';
 import OrderedItem from './OrderedItem';
 import TotalCheck from './TotalCheck';
 import SendOrder from './SendOrder';

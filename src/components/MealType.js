@@ -1,4 +1,5 @@
 import React from 'react';
+import './MealType.css';
 
  class MealType extends React.Component {
 

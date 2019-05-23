@@ -1,6 +1,6 @@
 import React from 'react'
+import './CheckContainer.css'
 import TableOrder from './TableOrder';
-import SendOrder from './SendOrder';
 import TableId from './TableId'
 
 export class CheckContainer extends React.Component {

@@ -1,0 +1,9 @@
+.send-order {
+	display: flex;
+	grid-area: send-order;
+	background-color: rgb(218, 162, 172);
+	border-radius: 0.25rem;
+	font-weight: bold;
+	align-items: center;
+	justify-content: center;
+}

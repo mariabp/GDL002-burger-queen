@@ -1,4 +1,5 @@
 import React from 'react';
+import './SelectMenu.css';
 import ShowMenuItems from './ShowMenuItems';
 import SelectMealType from './SelectMealType';
 import MENU from '../menu';

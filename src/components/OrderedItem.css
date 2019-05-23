@@ -1,0 +1,9 @@
+
+.ordered-item {
+	display: block;
+	grid-area: ordered-item;
+	border-radius: 0.25rem;
+	background: rgb(183, 218, 162);
+	padding: 0.5rem;
+	margin-bottom: 0.5rem;
+}

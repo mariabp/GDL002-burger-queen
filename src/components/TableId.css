@@ -1,0 +1,8 @@
+.table-id {
+	display: flex;
+	grid-area: table-id;
+	border-radius: 0.25rem;
+	background-color: rgb(230, 224, 165);
+	align-items: center;
+	justify-content: center;
+}

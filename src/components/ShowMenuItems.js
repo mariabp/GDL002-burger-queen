@@ -1,4 +1,5 @@
 import React from 'react';
+import './ShowMenuItems.css';
 import MenuItem from './MenuItem';
 
 class ShowMenuItems extends React.Component {

@@ -29,38 +29,17 @@ class App extends React.Component {
 
 	}
 
-	// removeItem no funciona, tiene algo que ver con las ids
 
 	removeItem(index) {
 
-		console.log('state', this.state.order);
-
-		// let orderUpdate = this.state.order.filter((orderItem) => {
-
-		// 	let orderItemIndex = this.state.order.indexOf(orderItem) + 1;
-
-		// 	console.log(orderItem);
-
-		// 	if (orderItemIndex !== item.id) {
-
-		// 		return orderItem;
-
-		// 	} else {
-
-		// 		return null;
-
-		// 	}
-
-		// });
 		let stateOrder = [...this.state.order];
 		remove(stateOrder, (order, stateIndex) => {
 			// console.log(stateIndex, index, stateIndex === index);
 			return stateIndex === index;
 		});
+
+	//	stateOrder = [...stateOrder.slice(0,index), ...stateOrder.slice(index, -1)];
 		this.setState({ order: stateOrder });
-
-		// stateOrder = [...stateOrder.slice(0,index), ...stateOrder.slice(index, -1)];
-
 	}
 
 	render(){
