@@ -2,17 +2,17 @@ import React from 'react';
 
 class OrderedItem extends React.Component {
 
-	constructor(props) {
+	// constructor(props) {
 
-		super(props);
+	// 	super(props);
 
-		this.state = { 	id: props.id,
-						name: props.name,
-						price: props.price,
-						type: props.type
-					};
+	// // 	this.state = { 	id: props.id,
+	// // 					name: props.name,
+	// // 					price: props.price,
+	// // 					type: props.type
+	// // 				};
 
-	}
+	// // }
 
 	render() {
 
@@ -20,7 +20,7 @@ class OrderedItem extends React.Component {
 
 		return (
 
-				<div className="item" onClick={() => this.props.removeItem(this.props.index)}>{this.props.id}. {this.props.name} - ${this.props.price}</div>
+				<div className="ordered-item" onClick={() => this.props.removeItem(this.props.index)}>{this.props.name} - ${this.props.price}</div>
 
 		)
 

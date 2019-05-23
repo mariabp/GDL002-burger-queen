@@ -1,5 +1,7 @@
 import React from 'react';
 import OrderedItem from './OrderedItem';
+import TotalCheck from './TotalCheck';
+import SendOrder from './SendOrder';
 
 class TableOrder extends React.Component {
 
@@ -19,7 +21,15 @@ class TableOrder extends React.Component {
 
 			<div className="table-order">
 
-				  {mapOrder}
+			<div className="show-ordered-item">
+
+				{mapOrder}
+
+			</div>
+
+				  <TotalCheck />
+
+				  <SendOrder />
 
 			</div>
 

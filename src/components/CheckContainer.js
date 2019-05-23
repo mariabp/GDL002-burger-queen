@@ -15,8 +15,6 @@ export class CheckContainer extends React.Component {
 
 					<TableOrder order={this.props.order} removeItem={this.props.removeItem} />
 
-					<SendOrder />
-
 				</div>
 
 			)
