@@ -2,5 +2,9 @@
     grid-area: dashboard;
     display: grid;
     grid-template-columns: 1fr 1rem 1fr;
-    grid-template-areas: "home-button . send-note";
+    grid-template-rows: 3rem 1rem 4rem;
+    grid-template-areas:
+    "notes notes notes"
+    ". . ."
+    "home-button . send-note";
 }
