@@ -29,7 +29,6 @@ class App extends React.Component {
 
 	}
 
-
 	removeItem(index) {
 
 		let stateOrder = [...this.state.order];

@@ -7,7 +7,7 @@
 		"total-check"
 		"."
 		"send-order";
-	overflow-y: scroll;
+	overflow: hidden;
 }
 
 .show-ordered-item {

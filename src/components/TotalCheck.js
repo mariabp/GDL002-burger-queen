@@ -5,7 +5,16 @@ class TotalCheck extends React.Component {
 
 	render() {
 
-		return <div className="total-check">TOTAL</div>
+		const mapItemPrice = this.props.order.map(item => {
+
+			return item.price;
+
+		});
+
+
+		const totalSum = mapItemPrice.reduce((acc, val) => acc + val, 0);
+
+		return <div className="total-check">TOTAL: $ {totalSum}</div>
 
 	}
 
