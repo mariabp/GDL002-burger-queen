@@ -4,6 +4,7 @@ import ShowMenuItems from './ShowMenuItems';
 import SelectMealType from './SelectMealType';
 import MENU from '../menu';
 import MenuItem from './MenuItem';
+import Dashboard from './Dashboard';
 
 class SelectMenu extends React.Component {
 
@@ -64,6 +65,8 @@ class SelectMenu extends React.Component {
 				<SelectMealType showBreakfastProp={this.showBreakfast} showMealsProp={this.showMeals} showBeveragesProp={this.showBeverages} />
 
 				<ShowMenuItems className="menu-items" items={menuItems} addItem={this.props.addItem} />
+
+				<Dashboard />
 
 			</div>
 
