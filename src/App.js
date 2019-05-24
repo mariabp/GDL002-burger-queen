@@ -15,10 +15,16 @@ class App extends React.Component {
 		this.state = {
 
 			orderCount: 0,
-			order: []
+			order: [],
+			notes: []
 
 		};
 
+	}
+
+	addNote(note) {
+		let notesUpdate = this.state.notes.concat(note);
+		this.setSate({notes: notesUpdate})
 	}
 
 	addItem(item) {
