@@ -1,4 +1,5 @@
 .menu-items {
 	display: block;
 	grid-area: menu-items;
+	overflow-y: scroll;
 }
