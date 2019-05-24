@@ -1,0 +1,6 @@
+.dashboard {
+    grid-area: dashboard;
+    display: grid;
+    grid-template-columns: 1fr 1rem 1fr;
+    grid-template-areas: "home-button . send-note";
+}
