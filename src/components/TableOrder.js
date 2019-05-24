@@ -28,9 +28,9 @@ class TableOrder extends React.Component {
 
 			</div>
 
-				  <TotalCheck order={this.props.order} />
+				<TotalCheck order={this.props.order} />
 
-				  <SendOrder />
+				<SendOrder />
 
 			</div>
 

@@ -1,9 +1,8 @@
 .total-check {
-	display: block;
+	display: flex;
 	grid-area: total-check;
 	border-radius: 0.25rem;
 	background-color: rgb(171, 171, 171);
 	padding: 0.5rem;
 	align-items: center;
-	justify-content: center;
 }
