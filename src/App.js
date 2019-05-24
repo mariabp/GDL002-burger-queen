@@ -11,6 +11,7 @@ class App extends React.Component {
 
 		this.addItem = this.addItem.bind(this);
 		this.removeItem = this.removeItem.bind(this);
+		this.addNote = this.addNote.bind(this);
 
 		this.state = {
 
@@ -22,9 +23,18 @@ class App extends React.Component {
 
 	}
 
-	addNote(note) {
-		let notesUpdate = this.state.notes.concat(note);
-		this.setSate({notes: notesUpdate})
+	addNote = (event) => {
+
+		const note = event.currentTarget.dataset.note;
+
+		const notesUpdate = this.state.notes.concat(note);
+
+		this.setState(() => {
+
+			return { notes: notesUpdate };
+
+		});
+
 	}
 
 	addItem(item) {
@@ -53,7 +63,7 @@ class App extends React.Component {
 
 			<main>
 
-				<SelectMenu addItem={this.addItem} />
+				<SelectMenu addItem={this.addItem} addNote={this.addNote} />
 
 				<CheckContainer order={this.state.order} removeItem={this.removeItem}/>
 

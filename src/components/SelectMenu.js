@@ -66,7 +66,7 @@ class SelectMenu extends React.Component {
 
 				<ShowMenuItems className="menu-items" items={menuItems} addItem={this.props.addItem} />
 
-				<Dashboard />
+				<Dashboard addNote={this.props.addNote} />
 
 			</div>
 
