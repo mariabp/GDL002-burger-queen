@@ -51,12 +51,6 @@ const MENU =  [
 		type: 'beverages'
 	},
 	{
-		id: 302,
-		name: 'Café Au Lait',
-		price: 25,
-		type: 'beverages'
-	},
-	{
 		id: 303,
 		name: 'Té',
 		price: 20,
@@ -64,14 +58,8 @@ const MENU =  [
 	},
 	{
 		id: 304,
-		name: 'Kombucha CH',
+		name: 'Kombucha',
 		price: 25,
-		type: 'beverages'
-	},
-	{
-		id: 305,
-		name: 'Kombucha GDE',
-		price: 30,
 		type: 'beverages'
 	},
 	{
