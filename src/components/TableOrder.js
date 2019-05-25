@@ -9,11 +9,7 @@ class TableOrder extends React.Component {
 
 	render() {
 
-		// let n = 0;
-
 		let mapOrder = this.props.order.map((item, index) => {
-
-			// n++;
 
 			return <OrderedItem name={item.name} index={index} price={item.price} key={index} id={index} type={item.type} removeItem={this.props.removeItem} />
 
@@ -31,7 +27,7 @@ class TableOrder extends React.Component {
 
 				<div className="added-notes">
 
-					<AddedNote notes={this.props.notes}/>
+					<AddedNote notes={this.props.notes} removeNote={this.props.removeNote} />
 
 				</div>
 

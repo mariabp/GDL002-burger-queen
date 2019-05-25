@@ -12,6 +12,7 @@ class App extends React.Component {
 		this.addItem = this.addItem.bind(this);
 		this.removeItem = this.removeItem.bind(this);
 		this.addNote = this.addNote.bind(this);
+		this.removeNote = this.removeNote.bind(this);
 
 		this.state = {
 
@@ -20,6 +21,25 @@ class App extends React.Component {
 			notes: []
 
 		};
+
+	}
+
+	removeNote = (index) => {
+
+		console.log('index');
+		let stateNotes = [...this.state.notes];
+
+		remove(stateNotes, (index, stateIndex) => {
+
+			return stateIndex === index;
+
+		});
+
+		this.setState(() => {
+
+			return { notes: stateNotes };
+
+		});
 
 	}
 
@@ -65,7 +85,7 @@ class App extends React.Component {
 
 				<SelectMenu addItem={this.addItem} addNote={this.addNote} />
 
-				<CheckContainer notes= {this.state.notes} order={this.state.order} removeItem={this.removeItem}/>
+				<CheckContainer notes= {this.state.notes} order={this.state.order} removeItem={this.removeItem} removeNote={this.removeNote}/>
 
 			</main>
 
