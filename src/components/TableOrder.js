@@ -3,7 +3,7 @@ import './TableOrder.css';
 import OrderedItem from './OrderedItem';
 import TotalCheck from './TotalCheck';
 import SendOrder from './SendOrder';
-import AddedNotes from './AddedNotes';
+import AddedNote from './AddedNote';
 
 class TableOrder extends React.Component {
 
@@ -29,7 +29,11 @@ class TableOrder extends React.Component {
 
 			</div>
 
-				<AddedNotes notes={this.props.notes}/>
+				<div className="added-notes">
+
+					<AddedNote notes={this.props.notes}/>
+
+				</div>
 
 				<TotalCheck order={this.props.order} />
 

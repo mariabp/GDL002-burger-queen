@@ -18,3 +18,9 @@
 	padding-right: 0.5rem;
 	overflow-y: scroll;
 }
+
+.added-notes{
+	grid-area: added-notes;
+	display: block;
+	overflow-y: scroll;
+}

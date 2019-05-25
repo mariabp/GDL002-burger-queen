@@ -10,4 +10,5 @@
 	overflow-y: scroll;
 	resize: none;
 	text-overflow: clip;
+	background-color: rgb(186, 186, 186);
 }
