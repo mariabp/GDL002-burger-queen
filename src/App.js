@@ -65,7 +65,7 @@ class App extends React.Component {
 
 				<SelectMenu addItem={this.addItem} addNote={this.addNote} />
 
-				<CheckContainer order={this.state.order} removeItem={this.removeItem}/>
+				<CheckContainer notes= {this.state.notes} order={this.state.order} removeItem={this.removeItem}/>
 
 			</main>
 
