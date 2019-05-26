@@ -13,7 +13,13 @@ export class CheckContainer extends React.Component {
 
 					<TableId />
 
-					<TableOrder order={this.props.order} notes={this.props.notes} removeItem={this.props.removeItem} removeNote={this.props.removeNote} />
+					<TableOrder
+						order={this.props.order}
+						notes={this.props.notes}
+						index={this.props.index}
+						removeItem={this.props.removeItem}
+						removeNote={this.props.removeNote}
+					/>
 
 				</div>
 

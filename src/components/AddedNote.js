@@ -5,15 +5,7 @@ class AddedNote extends React.Component{
 
 	render() {
 
-		const mapNotes= this.props.notes.map(note => {
-
-			return note;
-
-		});
-
-
-		return mapNotes.map(note => <div key={note} className="added-note" onClick={() => this.props.removeNote(this.props.index)}>{note}</div>)
-
+		return  <div key={this.props.index} className="added-note" onClick={() => this.props.removeNote(this.props.index)}>{this.props.note}</div>
 
 	}
 

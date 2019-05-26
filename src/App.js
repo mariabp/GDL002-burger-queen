@@ -24,14 +24,13 @@ class App extends React.Component {
 
 	}
 
-	removeNote = (index) => {
+	removeNote = (noteindex) => {
 
-		console.log('index');
 		let stateNotes = [...this.state.notes];
 
-		remove(stateNotes, (index, stateIndex) => {
+		remove(stateNotes, (note, index) => {
 
-			return stateIndex === index;
+			return index === noteindex;
 
 		});
 
@@ -68,12 +67,12 @@ class App extends React.Component {
 	removeItem(index) {
 
 		let stateOrder = [...this.state.order];
+
 		remove(stateOrder, (order, stateIndex) => {
 
 			return stateIndex === index;
 		});
 
-	//	stateOrder = [...stateOrder.slice(0,index), ...stateOrder.slice(index, -1)];
 		this.setState({ order: stateOrder });
 	}
 
@@ -85,7 +84,12 @@ class App extends React.Component {
 
 				<SelectMenu addItem={this.addItem} addNote={this.addNote} />
 
-				<CheckContainer notes= {this.state.notes} order={this.state.order} removeItem={this.removeItem} removeNote={this.removeNote}/>
+				<CheckContainer
+					notes= {this.state.notes}
+					order={this.state.order}
+					removeItem={this.removeItem}
+					removeNote={this.removeNote}
+				 />
 
 			</main>
 
