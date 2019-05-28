@@ -1,32 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CheckContainer from './components/CheckContainer';
 import SelectMenu from './components/SelectMenu';
 import { remove } from 'lodash';
 
-class App extends React.Component {
+const App = (props) => {
 
-	constructor (props) {
+	const [order, setOrder] = useState([]);
+	const [notes, setNotes] = useState([]);
 
-		super(props);
+	const removeNote = (noteindex) => {
 
-		this.addItem = this.addItem.bind(this);
-		this.removeItem = this.removeItem.bind(this);
-		this.addNote = this.addNote.bind(this);
-		this.removeNote = this.removeNote.bind(this);
-
-		this.state = {
-
-			orderCount: 0,
-			order: [],
-			notes: []
-
-		};
-
-	}
-
-	removeNote = (noteindex) => {
-
-		let stateNotes = [...this.state.notes];
+		let stateNotes = [...notes];
 
 		remove(stateNotes, (note, index) => {
 
@@ -34,67 +18,72 @@ class App extends React.Component {
 
 		});
 
-		this.setState(() => {
+		setNotes(() => {
 
-			return { notes: stateNotes };
+			return stateNotes;
 
 		});
 
-	}
+	};
 
-	addNote = (event) => {
+	const addNote = (event) => {
 
 		const note = event.currentTarget.dataset.note;
 
-		const notesUpdate = this.state.notes.concat(note);
+		const notesUpdate = notes.concat(note);
 
-		this.setState(() => {
+		setNotes(() => {
 
-			return { notes: notesUpdate };
+			return notesUpdate;
 
 		});
 
-	}
+	};
 
-	addItem(item) {
+	const addItem = (item) => {
 
-		let orderUpdate = this.state.order.concat(item);
+		let orderUpdate = order.concat(item);
 
-		this.setState({ order: orderUpdate })
+		setOrder(() => {
 
-	}
+			return orderUpdate;
 
-	removeItem(index) {
+		})
 
-		let stateOrder = [...this.state.order];
+	};
+
+	const removeItem = (index) => {
+
+		let stateOrder = [...order];
 
 		remove(stateOrder, (order, stateIndex) => {
 
 			return stateIndex === index;
 		});
 
-		this.setState({ order: stateOrder });
-	}
+		setOrder(() => {
 
-	render(){
+			return stateOrder;
 
-		return (
+		});
+	};
 
-			<main>
+	return (
 
-				<SelectMenu addItem={this.addItem} addNote={this.addNote} />
+		<main>
 
-				<CheckContainer
-					notes= {this.state.notes}
-					order={this.state.order}
-					removeItem={this.removeItem}
-					removeNote={this.removeNote}
-				 />
+			<SelectMenu addItem={addItem} addNote={addNote} />
 
-			</main>
+			<CheckContainer
+				notes= {notes}
+				order={order}
+				removeItem={removeItem}
+				removeNote={removeNote}
+				/>
 
-		);
-	}
+		</main>
+
+	);
 
 }
 
