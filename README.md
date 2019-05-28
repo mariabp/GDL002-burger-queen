@@ -6,7 +6,7 @@ Es una interfaz web creada para un pequeño restaurante de hamburguesas en creci
 ## Prototipo De Alta Fidelidad
 
 Pantalla de Inicio
-[Inicio](images/Home.png)
+![Inicio](images/Home.png)
 
 Servicio
 ![Servicio](images/Service.png)
