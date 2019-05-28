@@ -1,0 +1,14 @@
+.notes {
+	display: flex;
+	grid-area: notes;
+	padding: 0.25rem;
+	border-radius: 0.25rem;
+	font-size: 12pt;
+	outline: none;
+	overflow: hidden;
+	overflow-wrap: break-word;
+	overflow-y: scroll;
+	resize: none;
+	text-overflow: clip;
+	background-color: rgb(186, 186, 186);
+}

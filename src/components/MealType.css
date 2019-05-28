@@ -1,0 +1,31 @@
+.breakfast {
+	grid-area: breakfast-button;
+	display: flex;
+	background: rgb(162, 215, 218);
+	border-radius: 0.25rem;
+	border: 0;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.meals{
+	grid-area: meals-button;
+	display: flex;
+	background: rgb(173, 162, 218);
+	border-radius: 0.25rem;
+	border: 0;
+	align-items: center;
+    justify-content: center;
+}
+
+.beverages {
+	grid-area: beverages-button;
+	display: flex;
+	background: rgb(218, 162, 216);
+	border-radius: 0.25rem;
+	border: 0;
+	align-items: center;
+	justify-content: center;
+
+}

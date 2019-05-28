@@ -1,0 +1,9 @@
+.home-button {
+    grid-area: home-button;
+    display: flex;
+	background: rgb(218,162,192);
+	border-radius: 0.25rem;
+	border: 0;
+	align-items: center;
+    justify-content: center;
+}

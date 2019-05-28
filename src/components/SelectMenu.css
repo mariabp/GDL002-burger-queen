@@ -1,0 +1,21 @@
+
+.select-menu-container {
+	display: grid;
+	grid-area: select-menu-container;
+	grid-template-columns: 1fr;
+	grid-template-rows: 4rem 0.5rem 1fr 0.5rem auto;
+	grid-template-areas:
+		"meal-type"
+		"."
+		"menu-items"
+		"."
+		"dashboard";
+	background-color: rgb(194, 194, 194);
+	border-radius: 0.25rem;
+	padding: 0.5rem;
+}
+
+.menu-items {
+	grid-area: menu-items;
+	display: block;
+}

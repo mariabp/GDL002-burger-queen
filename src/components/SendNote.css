@@ -1,0 +1,9 @@
+.send-note {
+    grid-area: send-note;
+    display: flex;
+	background: rgb(162, 178, 218);
+	border-radius: 0.25rem;
+	border: 0;
+	align-items: center;
+    justify-content: center;
+}

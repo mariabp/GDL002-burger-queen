@@ -1,0 +1,26 @@
+.table-order {
+	grid-area: table-order;
+	display: grid;
+	grid-template-rows: auto 0.5rem 3rem 0.5rem 2rem 1rem 4rem;
+	grid-template-areas:
+		"show-ordered-item"
+		"."
+		"added-notes"
+		"."
+		"total-check"
+		"."
+		"send-order";
+	overflow: hidden;
+}
+
+.show-ordered-item {
+	grid-area: show-ordered-item;
+	padding-right: 0.5rem;
+	overflow-y: scroll;
+}
+
+.added-notes{
+	grid-area: added-notes;
+	display: block;
+	overflow-y: scroll;
+}
