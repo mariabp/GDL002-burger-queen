@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ShowMenuItems.css';
 import MenuItem from './MenuItem';
 
 const ShowMenuItems = (props) => {
-
-	const mealType =  useState(props.type);
 
 	return (
 

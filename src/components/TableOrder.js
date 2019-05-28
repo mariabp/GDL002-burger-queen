@@ -15,10 +15,7 @@ const TableOrder = (props) => {
 
 	let mapNotes = props.notes.map((note, index) => {
 
-		console.log(index);
-
 		return <AddedNote index={index} key={index} note={note} removeNote={props.removeNote} />
-
 
 	});
 
