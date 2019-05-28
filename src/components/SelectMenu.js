@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SelectMenu.css';
 import ShowMenuItems from './ShowMenuItems';
 import SelectMealType from './SelectMealType';
@@ -6,73 +6,56 @@ import MENU from '../menu';
 import MenuItem from './MenuItem';
 import Dashboard from './Dashboard';
 
-class SelectMenu extends React.Component {
+const SelectMenu = (props) => {
 
-	constructor (props) {
+	const [mealType, setMealType] = useState("none");
 
-		super(props);
+	const showBreakfast = () => {
 
-		this.showBreakfast = this.showBreakfast.bind(this);
-		this.showMeals = this.showMeals.bind(this);
-		this.showBeverages = this.showBeverages.bind(this);
+		setMealType("breakfast");
 
-		this.state = {
+	};
 
-			mealType: "none",
+	const showMeals = () => {
 
-		};
-	}
+		setMealType("meals");
 
-	showBreakfast() {
+	};
 
-		this.setState({ mealType: "breakfast" });
+	const showBeverages = () => {
 
-	}
+		setMealType("beverages");
 
-	showMeals() {
+	};
 
-		this.setState({ mealType: "meals" });
+	let menuItems = MENU.filter((element) => {
 
-	}
+		if (element.type === mealType) {
 
-	showBeverages() {
+			return <MenuItem className="item" key={element.id} name={element} price={element.price} type={element.type} addItem={props.addItem} />
 
-		this.setState({ mealType: "beverages" });
+		} else {
 
-	}
+			return null;
 
-	render() {
+		}
 
-		let menuItems = MENU.filter((element) => {
+	});
 
-			if (element.type === this.state.mealType) {
+	return (
 
-				return <MenuItem className="item" key={element.id} name={element} price={element.price} type={element.type} addItem={this.props.addItem} />
+		<div className="select-menu-container">
 
-			} else {
+			<SelectMealType showBreakfastProp={showBreakfast} showMealsProp={showMeals} showBeveragesProp={showBeverages} />
 
-				return null;
+			<ShowMenuItems className="menu-items" items={menuItems} addItem={props.addItem} />
 
-			}
+			<Dashboard addNote={props.addNote} />
 
-		});
+		</div>
 
+	);
 
-		return (
-
-			<div className="select-menu-container">
-
-				<SelectMealType showBreakfastProp={this.showBreakfast} showMealsProp={this.showMeals} showBeveragesProp={this.showBeverages} />
-
-				<ShowMenuItems className="menu-items" items={menuItems} addItem={this.props.addItem} />
-
-				<Dashboard addNote={this.props.addNote} />
-
-			</div>
-
-		)
-
-	}
 };
 
 export default SelectMenu;

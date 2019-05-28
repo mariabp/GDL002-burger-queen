@@ -1,22 +1,18 @@
 import React from 'react';
 import './TotalCheck.css';
 
-class TotalCheck extends React.Component {
+const TotalCheck = (props) => {
 
-	render() {
+	const mapItemPrice = props.order.map(item => {
 
-		const mapItemPrice = this.props.order.map(item => {
+		return item.price;
 
-			return item.price;
-
-		});
+	});
 
 
-		const totalSum = mapItemPrice.reduce((acc, val) => acc + val, 0);
+	const totalSum = mapItemPrice.reduce((acc, val) => acc + val, 0);
 
-		return <div className="total-check">TOTAL: $ {totalSum}</div>
-
-	}
+	return <div className="total-check">TOTAL: $ {totalSum}</div>
 
 };
 

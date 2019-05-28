@@ -1,45 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Dashboard.css';
 import Notes from './Notes'
 import HomeButton from './HomeButton';
 import SendNote from './SendNote';
 
-class Dashboard extends React.Component {
+const Dashboard = (props) =>{
 
-	constructor (props) {
+	const [note, setNote] = useState("");
 
-		super(props);
+	const handleNote = (event) => {
 
-		this.handleNote = this.handleNote.bind(this);
+		setNote(event.target.value);
 
-		this.state = {
+	};
 
-			note: "",
+	return (
 
-		};
-	}
+		<div className="dashboard">
 
-	handleNote(event) {
+			<Notes handleNote={handleNote} />
+			<HomeButton />
+			<SendNote addNote={props.addNote} note={note}/>
 
-		this.setState({ note: event.target.value });
+		</div>
 
-	}
+	);
 
-	render() {
-
-		return (
-
-			<div className="dashboard">
-
-				<Notes handleNote={this.handleNote} />
-				<HomeButton />
-				<SendNote addNote={this.props.addNote} note={this.state.note}/>
-
-			</div>
-		)
-
-	}
-
-}
+};
 
 export default Dashboard;

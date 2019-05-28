@@ -2,32 +2,21 @@ import React from 'react'
 import './SelectMealType.css';
 import MealType from './MealType';
 
-class SelectMealType extends React.Component {
+const SelectMealType = (props) => {
 
-	constructor (props) {
+	return (
 
-		super(props);
+		<div className="meal-type">
 
-		this.state = {};
+			<MealType className="breakfast" name="breakfast" display="DESAYUNOS" handlerProp={props.showBreakfastProp}/>
 
-	}
+			<MealType className="meals" name="meals" display="COMIDAS" handlerProp={props.showMealsProp} />
 
-	render() {
+			<MealType className="beverages" name="beverages" display="BEBIDAS" handlerProp={props.showBeveragesProp} />
 
-		return (
+		</div>
 
-			<div className="meal-type">
-
-				<MealType className="breakfast" name="breakfast" display="DESAYUNOS" handlerProp={this.props.showBreakfastProp}/>
-
-				<MealType className="meals" name="meals" display="COMIDAS" handlerProp={this.props.showMealsProp} />
-
-				<MealType className="beverages" name="beverages" display="BEBIDAS" handlerProp={this.props.showBeveragesProp} />
-
-			</div>
-
-		)
-	}
+	);
 
 }
 

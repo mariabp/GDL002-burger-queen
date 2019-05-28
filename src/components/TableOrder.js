@@ -5,50 +5,46 @@ import TotalCheck from './TotalCheck';
 import SendOrder from './SendOrder';
 import AddedNote from './AddedNote';
 
-class TableOrder extends React.Component {
+const TableOrder = (props) => {
 
-	render() {
+	let mapOrder = props.order.map((item, index) => {
 
-		let mapOrder = this.props.order.map((item, index) => {
+		return <OrderedItem name={item.name} index={index} price={item.price} key={index} id={index} type={item.type} removeItem={props.removeItem} />
 
-			return <OrderedItem name={item.name} index={index} price={item.price} key={index} id={index} type={item.type} removeItem={this.props.removeItem} />
+	});
 
-		});
+	let mapNotes = props.notes.map((note, index) => {
 
-		let mapNotes = this.props.notes.map((note, index) => {
+		console.log(index);
 
-			console.log(index);
-
-			return <AddedNote index={index} key={index} note={note} removeNote={this.props.removeNote} />
+		return <AddedNote index={index} key={index} note={note} removeNote={props.removeNote} />
 
 
-		});
+	});
 
-		return (
+	return (
 
-			<div className="table-order">
+		<div className="table-order">
 
-				<div className="show-ordered-item">
+			<div className="show-ordered-item">
 
-					{mapOrder}
-
-				</div>
-
-				<div className="added-notes">
-
-					{mapNotes}
-
-				</div>
-
-				<TotalCheck order={this.props.order} />
-
-				<SendOrder />
+				{mapOrder}
 
 			</div>
 
-		)
+			<div className="added-notes">
 
-	}
+				{mapNotes}
+
+			</div>
+
+			<TotalCheck order={props.order} />
+
+			<SendOrder />
+
+		</div>
+
+	);
 
 }
 

@@ -1,18 +1,10 @@
 import React from 'react';
 import './MealType.css';
 
- class MealType extends React.Component {
+const MealType = (props) => {
 
-	render() {
+	return <button className={props.name} key={props.id} onClick={props.handlerProp}>{props.display}</button>;
 
-		return (
+};
 
-			<button className={this.props.name} key={this.props.id} onClick={this.props.handlerProp}>{this.props.display}</button>
-
-		)
-
-	}
-
- }
-
- export default MealType;
+export default MealType;

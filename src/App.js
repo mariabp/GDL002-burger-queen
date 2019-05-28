@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckContainer } from './components/CheckContainer';
+import CheckContainer from './components/CheckContainer';
 import SelectMenu from './components/SelectMenu';
 import { remove } from 'lodash';
 

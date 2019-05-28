@@ -1,18 +1,10 @@
 import React from 'react';
 import './HomeButton.css';
 
+const HomeButton = (props) => {
 
-class HomeButton extends React.Component {
+		return <button className="home-button">INICIO</button>;
 
-	render() {
-
-		return (
-
-			<button className="home-button">INICIO</button>
-		)
-
-	}
-
-}
+};
 
 export default HomeButton;

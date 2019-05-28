@@ -1,17 +1,12 @@
 import React from 'react';
 import './SendNote.css';
 
-class SendNote extends React.Component {
+const SendNote = (props) => {
 
-	render() {
-
-		return (
-
-			<button className="send-note" onClick={this.props.addNote} data-note={this.props.note}>ENVIAR NOTA</button>
-		)
-
-	}
+		return 	<button className="send-note" onClick={props.addNote} data-note={props.note}>ENVIAR NOTA</button>
 
 }
+
+
 
 export default SendNote;

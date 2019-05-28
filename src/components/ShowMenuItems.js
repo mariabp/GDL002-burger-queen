@@ -1,29 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ShowMenuItems.css';
 import MenuItem from './MenuItem';
 
-class ShowMenuItems extends React.Component {
+const ShowMenuItems = (props) => {
 
-	constructor (props) {
+	const mealType =  useState(props.type);
 
-		super(props);
+	return (
 
-		this.state = { mealType: props.type };
+		<div className="menu-items">
 
-	}
+			{props.items.map(item => <MenuItem name={item.name} price={item.price} key={item.id} id={item.id} type={item.type} addItem={props.addItem}/>)}
 
-	render() {
-
-		return (
-
-			<div className="menu-items">
-
-				{this.props.items.map(item => <MenuItem name={item.name} price={item.price} key={item.id} id={item.id} type={item.type} addItem={this.props.addItem}/>)}
-
-			</div>
+		</div>
 
 		)
-	}
+
 };
 
 export default ShowMenuItems;

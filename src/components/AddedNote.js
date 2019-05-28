@@ -1,13 +1,9 @@
 import React from 'react';
 import './AddedNote.css';
 
-class AddedNote extends React.Component{
+const AddedNote = (props) => {
 
-	render() {
-
-		return  <div key={this.props.index} className="added-note" onClick={() => this.props.removeNote(this.props.index)}>{this.props.note}</div>
-
-	}
+	return  <div key={props.index} className="added-note" onClick={() => props.removeNote(props.index)}>{props.note}</div>
 
 }
 

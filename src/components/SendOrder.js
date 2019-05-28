@@ -1,12 +1,9 @@
 import React from 'react';
 import './SendOrder.css';
-class SendOrder extends React.Component {
 
-	render() {
+const SendOrder = (props) => {
 
-		return <button className="send-order">ENVIAR COMANDA</button>
-
-	}
+	return <button className="send-order">ENVIAR COMANDA</button>
 
 }
 

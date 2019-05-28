@@ -3,28 +3,26 @@ import './CheckContainer.css'
 import TableOrder from './TableOrder';
 import TableId from './TableId'
 
-export class CheckContainer extends React.Component {
+const CheckContainer = (props) => {
 
-		render() {
+	return (
 
-			return (
+		<div className="check-container">
 
-				<div className="check-container">
+			<TableId />
 
-					<TableId />
+			<TableOrder
+				order={props.order}
+				notes={props.notes}
+				index={props.index}
+				removeItem={props.removeItem}
+				removeNote={props.removeNote}
+			/>
 
-					<TableOrder
-						order={this.props.order}
-						notes={this.props.notes}
-						index={this.props.index}
-						removeItem={this.props.removeItem}
-						removeNote={this.props.removeNote}
-					/>
+		</div>
 
-				</div>
+	)
 
-			)
+};
 
-		}
-
-}
+export default CheckContainer;
