@@ -1,0 +1,9 @@
+.login-btn {
+	grid-area: login-btn;
+	display: flex;
+	border-radius: 0.25rem;
+	align-items: center;
+	justify-content: center;
+	padding: 0.5rem;
+	background: rgb(183, 218, 162);
+}
