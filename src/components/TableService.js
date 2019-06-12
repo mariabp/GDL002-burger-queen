@@ -9,6 +9,7 @@ const TableService = (props) => {
 	const [order, setOrder] = useState([]);
 	const [notes, setNotes] = useState([]);
 
+
 	const removeNote = (noteindex) => {
 
 		let stateNotes = [...notes];
@@ -80,7 +81,8 @@ const TableService = (props) => {
 				order={order}
 				removeItem={removeItem}
 				removeNote={removeNote}
-				/>
+				submitOrder={props.submitOrder}
+			/>
 
 		</main>
 

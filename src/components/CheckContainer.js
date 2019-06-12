@@ -17,6 +17,7 @@ const CheckContainer = (props) => {
 				index={props.index}
 				removeItem={props.removeItem}
 				removeNote={props.removeNote}
+				submitOrder={props.submitOrder}
 			/>
 
 		</div>

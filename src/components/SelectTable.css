@@ -1,0 +1,42 @@
+.select-table-container {
+	display: grid;
+	width: 100vw;
+	height: 100vh;
+	grid-template-columns: 0.5rem 1fr 1fr 1fr 2fr 0.5rem;
+	grid-template-rows: 1rem 4rem auto auto auto 1rem;
+	grid-row-gap: 0.5rem;
+	grid-template-areas:
+		". . . . . ."
+		". tables-title tables-title . selected-table ."
+		". show-tables show-tables show-tables . ."
+		". show-tables show-tables show-tables . ."
+		". show-tables show-tables show-tables . ."
+		". . . . . .";
+		background: rgb(171, 169, 169);
+
+}
+
+.tables-title {
+	grid-area: tables-title;
+	display: flex;
+	font-size: 2rem;
+	font-weight: 900;
+	color: white;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.selected-table {
+	grid-area: selected-table;
+	display: flex;
+	border-radius: 0.25rem;
+	background-color: rgb(230, 224, 165);
+	align-items: center;
+	justify-content: center;
+}
+
+.show-tables {
+	grid-area: show-tables;
+	display: flex;
+}

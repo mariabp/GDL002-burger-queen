@@ -3,7 +3,7 @@ import './LoginBtn.css';
 
 const LoginBtn = props => (
 
-	<div className="login-btn" onClick={() => props.selectService('tableService')}>INGRESAR AL SISTEMA</div>
+	<div className="login-btn" onClick={() => props.selectService('selectTable')}>INGRESAR AL SISTEMA</div>
 
 )
 
