@@ -1,90 +1,34 @@
-import React, { useState } from 'react';
-import CheckContainer from './components/CheckContainer';
-import SelectMenu from './components/SelectMenu';
-import { remove } from 'lodash';
+import React, { useState }from 'react';
+import './App.css';
+import KitchenService from './components/KitchenService';
+import SelectService from './components/SelectService';
+import TableService from './components/TableService';
 
-const App = (props) => {
+const App = () => {
 
-	const [order, setOrder] = useState([]);
-	const [notes, setNotes] = useState([]);
+	const [selectedService, setSelectedService] = useState('selectService');
 
-	const removeNote = (noteindex) => {
+	const selectService = (selectedService) => {
 
-		let stateNotes = [...notes];
-
-		remove(stateNotes, (note, index) => {
-
-			return index === noteindex;
-
-		});
-
-		setNotes(() => {
-
-			return stateNotes;
-
-		});
+		setSelectedService(selectedService);
 
 	};
 
-	const addNote = (event) => {
+	if (selectedService === 'tableService'){
 
-		const note = event.currentTarget.dataset.note;
+		return <TableService selectService={selectService} />;
 
-		const notesUpdate = notes.concat(note);
+	} else if (selectedService === 'kitchenService'){
 
-		setNotes(() => {
+		return <KitchenService />;
 
-			return notesUpdate;
+	} else {
 
-		});
+		return <SelectService selectService={selectService} />
 
-	};
+	}
 
-	const addItem = (item) => {
-
-		let orderUpdate = order.concat(item);
-
-		setOrder(() => {
-
-			return orderUpdate;
-
-		})
-
-	};
-
-	const removeItem = (index) => {
-
-		let stateOrder = [...order];
-
-		remove(stateOrder, (order, stateIndex) => {
-
-			return stateIndex === index;
-		});
-
-		setOrder(() => {
-
-			return stateOrder;
-
-		});
-	};
-
-	return (
-
-		<main>
-
-			<SelectMenu addItem={addItem} addNote={addNote} />
-
-			<CheckContainer
-				notes= {notes}
-				order={order}
-				removeItem={removeItem}
-				removeNote={removeNote}
-				/>
-
-		</main>
-
-	);
 
 }
 
- export default App
+export default App;

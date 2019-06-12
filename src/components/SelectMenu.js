@@ -50,7 +50,7 @@ const SelectMenu = (props) => {
 
 			<ShowMenuItems className="menu-items" items={menuItems} addItem={props.addItem} />
 
-			<Dashboard addNote={props.addNote} />
+			<Dashboard addNote={props.addNote} selectService={props.selectService} />
 
 		</div>
 
