@@ -1,8 +1,9 @@
 import React from 'react';
+import './Table.css'
 
 const Table = (props) => {
 
-		return 	(<button className={props.name} key={props.id} >{props.displayName}</button>);
+		return 	(<button className="table-btn">{props.displayName}</button>);
 
 }
 

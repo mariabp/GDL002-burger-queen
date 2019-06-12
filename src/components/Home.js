@@ -1,8 +1,8 @@
 import React from 'react';
 import LoginBtn from './LoginBtn';
-import './SelectService.css';
+import './Home.css';
 
-const SelectService = props => {
+const Home = props => {
 
 	return (
 		<div className="app-container">
@@ -14,4 +14,4 @@ const SelectService = props => {
 	);
 
 }
-export default SelectService;
+export default Home;

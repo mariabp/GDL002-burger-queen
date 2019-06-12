@@ -22,9 +22,9 @@
 	font-size: 2rem;
 	font-weight: 900;
 	color: white;
+	text-align: center;
 	align-items: center;
 	justify-content: center;
-
 }
 
 .selected-table {
@@ -39,4 +39,8 @@
 .show-tables {
 	grid-area: show-tables;
 	display: flex;
+	flex-wrap: wrap;
+	background: rgb(171, 169, 169);
+	align-items: center;
+	justify-content: center;
 }
