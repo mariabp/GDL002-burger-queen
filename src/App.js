@@ -8,51 +8,8 @@ const App = () => {
 
 	const [selectedService, setSelectedService] = useState('selectService');
 	const [orders, setOrders] = useState([]);
-	const [tables, setTables] = useState([
-
-		{
-
-			name: 'table1',
-			id: 1,
-			displayName: 'MESA 1'
-
-		}, {
-
-			name: 'table2',
-			id: 2,
-			displayName: 'MESA 2'
-
-		}, {
-
-			name: 'table3',
-			id: 3,
-			displayName: 'MESA 3'
-
-		},{
-
-			name: 'table4',
-			id: 4,
-			displayName: 'MESA 4'
-
-		},{
-
-			name: 'table5',
-			id: 5,
-			displayName: 'MESA 5'
-
-		},{
-
-			name: 'table6',
-			id: 6,
-			displayName: 'MESA 6'
-
-		},{
-
-			name: 'delivery',
-			id: 7,
-			displayName: 'PARA LLEVAR'
-		}
-	]);
+	const [tables, setTables] = useState([]);
+	const [selectedTable, setSelectedTable] = useState([]);
 
 	const submitOrder = (order, notes) => {
 		const updateOrders = orders.concat({order: order, notes: notes});
