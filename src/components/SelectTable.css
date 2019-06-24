@@ -7,7 +7,7 @@
 	grid-row-gap: 0.5rem;
 	grid-template-areas:
 		". . . . . ."
-		". tables-title tables-title . selected-table ."
+		". tables-title tables-title . table-id ."
 		". show-tables show-tables show-tables . ."
 		". show-tables show-tables show-tables . ."
 		". show-tables show-tables show-tables . ."

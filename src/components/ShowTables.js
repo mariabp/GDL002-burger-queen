@@ -1,16 +1,15 @@
 import React from 'react';
 import Table from './Table';
 
-
 const ShowTables = (props) => {
 
-		return 	(
-			<div className="show-tables">
+	return 	(
+		<div className="show-tables">
 
-				{props.tables.map( item => (<Table key={item.id} name={item.name} displayName={item.displayName}/>))}
+			{props.tables.map(table => (<Table key={table._id} number={table.number} />))}
 
-			</div>
-		);
+		</div>
+	);
 
 }
 

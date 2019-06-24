@@ -1,4 +1,4 @@
-import React, { useState }from 'react';
+import React, { useState, useEffect }from 'react';
 import './App.css';
 import KitchenService from './components/KitchenService';
 import Home from './components/Home';
@@ -10,6 +10,31 @@ const App = () => {
 	const [orders, setOrders] = useState([]);
 	const [tables, setTables] = useState([]);
 	const [selectedTable, setSelectedTable] = useState([]);
+
+	useEffect(() => {
+
+		const getTables = async () => {
+
+			let response = await fetch('/tables');
+			let updatedTables = await response.json();
+
+			return updatedTables;
+
+		};
+
+		getTables()
+
+			.then(updatedTables => {
+
+				setTables(updatedTables);
+
+			})
+
+			.catch(error => console.log(error))
+
+		;
+
+	});
 
 	const submitOrder = (order, notes) => {
 		const updateOrders = orders.concat({order: order, notes: notes});

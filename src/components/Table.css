@@ -1,9 +1,8 @@
 .table-btn {
 	display: flex;
 	background-color: rgb(151, 176, 201);
-	padding: 2rem;
+	padding: 1.5rem;
 	margin: 1rem;
 	border-radius: 0.25rem;
 	box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 3px;
-
 }

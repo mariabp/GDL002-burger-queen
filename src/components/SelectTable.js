@@ -1,7 +1,7 @@
 import React from 'react';
 import './SelectTable.css';
 import ShowTables from './ShowTables';
-import SelectedTable from './SelectedTable';
+import TableId from './TableId';
 
 
 const SelectTable = props => {
@@ -9,9 +9,8 @@ const SelectTable = props => {
 		return 	(
 			<div className="select-table-container">
 				<div className="tables-title">BURGER QUEEN</div>
-				<SelectedTable />
+				<TableId />
 				<ShowTables tables={props.tables} />
-
 			</div>
 		)
 
