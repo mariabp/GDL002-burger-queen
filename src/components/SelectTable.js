@@ -10,7 +10,7 @@ const SelectTable = props => {
 			<div className="select-table-container">
 				<div className="tables-title">BURGER QUEEN</div>
 				<TableId />
-				<ShowTables tables={props.tables} />
+				<ShowTables tables={props.tables} takeOrder={props.takeOrder} />
 			</div>
 		)
 

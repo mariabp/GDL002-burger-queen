@@ -6,7 +6,7 @@ const ShowTables = (props) => {
 	return 	(
 		<div className="show-tables">
 
-			{props.tables.map(table => (<Table key={table._id} number={table.number} />))}
+			{props.tables.map(table => (<Table key={table._id} table={table} takeOrder={props.takeOrder} />))}
 
 		</div>
 	);

@@ -3,13 +3,14 @@ import './App.css';
 import KitchenService from './components/KitchenService';
 import Home from './components/Home';
 import SelectTable from './components/SelectTable';
+import TableService from './components/TableService';
 
 const App = () => {
 
 	const [selectedService, setSelectedService] = useState('selectService');
 	const [orders, setOrders] = useState([]);
 	const [tables, setTables] = useState([]);
-	const [selectedTable, setSelectedTable] = useState([]);
+	const [selectedTable, setSelectedTable] = useState(null);
 
 	useEffect(() => {
 
@@ -36,6 +37,12 @@ const App = () => {
 
 	});
 
+	const takeOrder = (table) => {
+
+		setSelectedTable(table);
+
+	}
+
 	const submitOrder = (order, notes) => {
 		const updateOrders = orders.concat({order: order, notes: notes});
 		setOrders(updateOrders);
@@ -47,9 +54,17 @@ const App = () => {
 
 	};
 
-	if (selectedService === 'selectTable'){
+	if (selectedService === 'selectTable') {
 
-		return <SelectTable selectService={selectService} submitOrder={submitOrder} tables={tables} />;
+		if (selectedTable === null) {
+
+			return <SelectTable selectService={selectService} submitOrder={submitOrder} tables={tables} takeOrder={takeOrder}/>;
+
+		} else {
+
+			return <TableService selectedTable={selectedTable} />
+
+		}
 
 	} else if (selectedService === 'kitchenService'){
 

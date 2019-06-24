@@ -3,7 +3,7 @@ import './Table.css'
 
 const Table = (props) => {
 
-		return 	(<button className="table-btn">MESA {props.number}</button>);
+	return 	(<button className="table-btn" onClick={() => props.takeOrder(props.table) }>MESA {props.table.number}</button>);
 
 }
 
