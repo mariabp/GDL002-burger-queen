@@ -4,15 +4,37 @@ import MenuItem from './MenuItem';
 
 const ShowMenuItems = (props) => {
 
+	const filterProducts = props.products.filter((product) => {
+
+		if (product.type === props.mealType) {
+
+			return product;
+
+		} else {
+
+			return null;
+
+		}
+
+	});
+
+	console.log(filterProducts);
+
+	const mapfilterProducts = filterProducts.map((product) => {
+
+		return <MenuItem key={product._id} product={product} addItem={props.addItem} />;
+
+	});
+
 	return (
 
 		<div className="menu-items">
 
-			{props.items.map(item => <MenuItem name={item.name} price={item.price} key={item.id} id={item.id} type={item.type} addItem={props.addItem}/>)}
+			{mapfilterProducts}
 
 		</div>
 
-		)
+	)
 
 };
 

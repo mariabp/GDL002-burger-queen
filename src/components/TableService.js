@@ -9,7 +9,6 @@ const TableService = (props) => {
 	const [order, setOrder] = useState([]);
 	const [notes, setNotes] = useState([]);
 
-
 	const removeNote = (noteindex) => {
 
 		let stateNotes = [...notes];
@@ -74,7 +73,7 @@ const TableService = (props) => {
 
 		<main>
 
-			<SelectMenu addItem={addItem} addNote={addNote} takeOrder={props.takeOrder} />
+			<SelectMenu products={props.products} mealType={props.mealType} changeMealType={props.changeMealType} addItem={addItem} addNote={addNote} takeOrder={props.takeOrder} />
 
 			<CheckContainer
 				notes= {notes}

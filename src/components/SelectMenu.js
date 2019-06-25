@@ -1,54 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './SelectMenu.css';
 import ShowMenuItems from './ShowMenuItems';
 import SelectMealType from './SelectMealType';
-import MENU from '../menu';
-import MenuItem from './MenuItem';
 import Dashboard from './Dashboard';
 
 const SelectMenu = (props) => {
-
-	const [mealType, setMealType] = useState("none");
-
-	const showBreakfast = () => {
-
-		setMealType("breakfast");
-
-	};
-
-	const showMeals = () => {
-
-		setMealType("meals");
-
-	};
-
-	const showBeverages = () => {
-
-		setMealType("beverages");
-
-	};
-
-	let menuItems = MENU.filter((element) => {
-
-		if (element.type === mealType) {
-
-			return <MenuItem className="item" key={element.id} name={element} price={element.price} type={element.type} addItem={props.addItem} />
-
-		} else {
-
-			return null;
-
-		}
-
-	});
 
 	return (
 
 		<div className="select-menu-container">
 
-			<SelectMealType showBreakfastProp={showBreakfast} showMealsProp={showMeals} showBeveragesProp={showBeverages} />
+			<SelectMealType changeMealType={props.changeMealType} />
 
-			<ShowMenuItems className="menu-items" items={menuItems} addItem={props.addItem} />
+			<ShowMenuItems className="menu-items" products={props.products} addItem={props.addItem} mealType={props.mealType} />
 
 			<Dashboard addNote={props.addNote} takeOrder={props.takeOrder} />
 

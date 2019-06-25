@@ -10,7 +10,9 @@ const App = () => {
 	const [selectedService, setSelectedService] = useState('selectService');
 	const [orders, setOrders] = useState([]);
 	const [tables, setTables] = useState([]);
+	const [products, setProducts] = useState([]);
 	const [selectedTable, setSelectedTable] = useState(null);
+	const [mealType, setMealType] = useState("none");
 
 	useEffect(() => {
 
@@ -35,7 +37,40 @@ const App = () => {
 
 		;
 
-	});
+	}, []);
+
+	useEffect(() => {
+
+		const getProducts = async () => {
+
+			let response = await fetch('/products');
+			let updatedProducts = await response.json();
+
+			return updatedProducts;
+
+		};
+
+		getProducts()
+
+			.then(updatedProducts => {
+
+				setProducts(updatedProducts);
+
+			})
+
+			.catch(error => console.log(error))
+
+		;
+
+	}, [mealType]);
+
+	const changeMealType = (mealType) => {
+
+		console.log(mealType);
+
+		setMealType(mealType);
+
+	};
 
 	const takeOrder = (table) => {
 
@@ -62,7 +97,7 @@ const App = () => {
 
 		} else {
 
-			return <TableService selectedTable={selectedTable} takeOrder={takeOrder} />
+			return <TableService selectedTable={selectedTable} takeOrder={takeOrder} products={products} mealType={mealType} changeMealType={changeMealType} />
 
 		}
 
