@@ -12,7 +12,7 @@ const SelectMenu = (props) => {
 
 			<SelectMealType changeMealType={props.changeMealType} />
 
-			<ShowMenuItems className="menu-items" products={props.products} addItem={props.addItem} mealType={props.mealType} />
+			<ShowMenuItems className="menu-items" products={props.products} addProduct={props.addProduct} selectedTable={props.selectedTable} mealType={props.mealType} />
 
 			<Dashboard addNote={props.addNote} takeOrder={props.takeOrder} />
 

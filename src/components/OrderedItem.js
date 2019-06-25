@@ -3,7 +3,7 @@ import './OrderedItem.css';
 
 const OrderedItem = (props) => {
 
-	return <div className="ordered-item" onClick={() => props.removeItem(props.index)}>{props.name} - ${props.price}</div>;
+	return <div className="ordered-item" onClick={() => props.removeProduct(props.selectedTable, props.index)}>{props.name} - ${props.price}</div>;
 
 };
 

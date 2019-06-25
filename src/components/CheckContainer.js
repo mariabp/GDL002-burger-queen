@@ -12,10 +12,10 @@ const CheckContainer = (props) => {
 			<TableId />
 
 			<TableOrder
-				order={props.order}
+				selectedTable={props.selectedTable}
 				notes={props.notes}
 				index={props.index}
-				removeItem={props.removeItem}
+				removeProduct={props.removeProduct}
 				removeNote={props.removeNote}
 				submitOrder={props.submitOrder}
 			/>

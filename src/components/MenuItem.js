@@ -5,7 +5,7 @@ const MenuItem = (props) => {
 
 	return (
 
-			<div className="item" onClick={() => props.addItem(props.product)}>
+			<div className="item" onClick={() => props.addProduct(props.selectedTable, props.product)}>
 
 				{props.product.name} - ${props.product.price}
 

@@ -7,9 +7,9 @@ import AddedNote from './AddedNote';
 
 const TableOrder = (props) => {
 
-	let mapOrder = props.order.map((item, index) => {
+	let mapOrder = props.selectedTable.pendingOrder.map((product, index) => {
 
-		return <OrderedItem name={item.name} index={index} price={item.price} key={index} id={index} type={item.type} removeItem={props.removeItem} />
+		return <OrderedItem selectedTable={props.selectedTable} name={product.name} index={index} price={product.price} key={index} id={index} type={product.type} removeProduct={props.removeProduct} />
 
 	});
 
@@ -35,7 +35,7 @@ const TableOrder = (props) => {
 
 			</div>
 
-			<TotalCheck order={props.order} />
+			<TotalCheck selectedTable={props.selectedTable} />
 
 			<SendOrder submitOrder={props.submitOrder} />
 

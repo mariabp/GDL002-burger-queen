@@ -6,7 +6,6 @@ import './TableService.css';
 
 const TableService = (props) => {
 
-	const [order, setOrder] = useState([]);
 	const [notes, setNotes] = useState([]);
 
 	const removeNote = (noteindex) => {
@@ -41,44 +40,16 @@ const TableService = (props) => {
 
 	};
 
-	const addItem = (item) => {
-
-		let orderUpdate = order.concat(item);
-
-		setOrder(() => {
-
-			return orderUpdate;
-
-		})
-
-	};
-
-	const removeItem = (index) => {
-
-		let stateOrder = [...order];
-
-		remove(stateOrder, (order, stateIndex) => {
-
-			return stateIndex === index;
-		});
-
-		setOrder(() => {
-
-			return stateOrder;
-
-		});
-	};
-
 	return (
 
 		<main>
 
-			<SelectMenu products={props.products} mealType={props.mealType} changeMealType={props.changeMealType} addItem={addItem} addNote={addNote} takeOrder={props.takeOrder} />
+			<SelectMenu selectedTable={props.selectedTable} products={props.products} mealType={props.mealType} changeMealType={props.changeMealType} addProduct={props.addProduct} addNote={addNote} takeOrder={props.takeOrder} />
 
 			<CheckContainer
 				notes= {notes}
-				order={order}
-				removeItem={removeItem}
+				selectedTable={props.selectedTable}
+				removeProduct={props.removeProduct}
 				removeNote={removeNote}
 				submitOrder={props.submitOrder}
 			/>

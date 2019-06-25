@@ -18,11 +18,9 @@ const ShowMenuItems = (props) => {
 
 	});
 
-	console.log(filterProducts);
-
 	const mapfilterProducts = filterProducts.map((product) => {
 
-		return <MenuItem key={product._id} product={product} addItem={props.addItem} />;
+		return <MenuItem key={product._id} product={product} addProduct={props.addProduct} selectedTable={props.selectedTable} />;
 
 	});
 

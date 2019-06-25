@@ -64,6 +64,44 @@ const App = () => {
 
 	}, [mealType]);
 
+	const addProduct = async (selectedTable, product) => {
+
+		selectedTable.pendingOrder.push(product);
+
+		const res = await fetch(`/tables/update/${selectedTable._id}`, {
+
+			method: 'PATCH',
+			headers: {'Content-Type': 'application/json'},
+			body: JSON.stringify({data: selectedTable})
+
+		});
+
+		const updatedTables = await res.json();
+
+		setTables(updatedTables);
+
+	};
+
+	const removeProduct = async (selectedTable, orderedProductIndex) => {
+
+		const filteredOrder = selectedTable.pendingOrder.filter((product, index) => orderedProductIndex !== index ? product : null);
+
+		selectedTable.pendingOrder = filteredOrder;
+
+		const res = await fetch(`/tables/update/${selectedTable._id}`, {
+
+			method: 'PATCH',
+			headers: {'Content-Type': 'application/json'},
+			body: JSON.stringify({data: selectedTable})
+
+		});
+
+		const updatedTables = await res.json();
+
+		setTables(updatedTables);
+
+	};
+
 	const changeMealType = (mealType) => {
 
 		console.log(mealType);
@@ -97,7 +135,7 @@ const App = () => {
 
 		} else {
 
-			return <TableService selectedTable={selectedTable} takeOrder={takeOrder} products={products} mealType={mealType} changeMealType={changeMealType} />
+			return <TableService selectedTable={selectedTable} takeOrder={takeOrder} tables={tables} addProduct={addProduct} removeProduct={removeProduct} products={products} mealType={mealType} changeMealType={changeMealType} />
 
 		}
 

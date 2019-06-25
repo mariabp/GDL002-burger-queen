@@ -3,9 +3,9 @@ import './TotalCheck.css';
 
 const TotalCheck = (props) => {
 
-	const mapItemPrice = props.order.map(item => {
+	const mapItemPrice = props.selectedTable.pendingOrder.map(product => {
 
-		return item.price;
+		return product.price;
 
 	});
 
