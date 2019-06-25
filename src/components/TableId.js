@@ -3,7 +3,15 @@ import './TableId.css';
 
 const TableId = (props) => {
 
-	return <div className="table-id">MESA SELECCIONADA</div>
+	let tableNumber = 'SELECIONA UNA MESA'
+
+	if (props.selectedTable) {
+
+		tableNumber = `MESA ${props.selectedTable.number}`;
+
+	}
+
+	return <div className="table-id">{tableNumber}</div>
 
 }
 
