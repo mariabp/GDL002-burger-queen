@@ -9,7 +9,7 @@ const CheckContainer = (props) => {
 
 		<div className="check-container">
 
-			<TableId />
+			<TableId selectedTable={props.selectedTable} />
 
 			<TableOrder
 				selectedTable={props.selectedTable}
