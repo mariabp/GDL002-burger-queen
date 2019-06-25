@@ -62,7 +62,7 @@ const App = () => {
 
 		} else {
 
-			return <TableService selectedTable={selectedTable} />
+			return <TableService selectedTable={selectedTable} takeOrder={takeOrder} />
 
 		}
 

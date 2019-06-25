@@ -3,7 +3,7 @@ import './HomeButton.css';
 
 const HomeButton = props => {
 
-		return <button className="home-button" onClick={() => props.selectService('selectService')}>INICIO</button>;
+		return <button className="home-button" onClick={() => props.takeOrder(null)}>INICIO</button>;
 
 };
 

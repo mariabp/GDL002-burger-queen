@@ -19,7 +19,7 @@ const Dashboard = (props) =>{
 		<div className="dashboard">
 
 			<Notes handleNote={handleNote} />
-			<HomeButton selectService={props.selectService} />
+			<HomeButton takeOrder={props.takeOrder} />
 			<SendNote addNote={props.addNote} note={note}/>
 
 		</div>

@@ -74,7 +74,7 @@ const TableService = (props) => {
 
 		<main>
 
-			<SelectMenu addItem={addItem} addNote={addNote} selectService={props.selectService} />
+			<SelectMenu addItem={addItem} addNote={addNote} takeOrder={props.takeOrder} />
 
 			<CheckContainer
 				notes= {notes}
