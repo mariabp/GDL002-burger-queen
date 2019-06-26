@@ -1,0 +1,12 @@
+.to-home-btn {
+	grid-area: to-home-btn;
+	display: flex;
+	border-radius: 0.25rem;
+	align-items: center;
+	justify-content: center;
+}
+
+ .fa-arrow-left {
+	font-size: 2.5rem;
+	color:rgb(238, 235, 235);
+}

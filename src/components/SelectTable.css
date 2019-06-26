@@ -7,7 +7,7 @@
 	grid-row-gap: 0.5rem;
 	grid-template-areas:
 		". . . . . ."
-		". tables-title tables-title . table-id ."
+		". to-home-btn tables-title tables-title table-id ."
 		". show-tables show-tables show-tables . ."
 		". show-tables show-tables show-tables . ."
 		". show-tables show-tables show-tables . ."
@@ -24,7 +24,7 @@
 	color: white;
 	text-align: center;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-center;
 }
 
 .selected-table {
