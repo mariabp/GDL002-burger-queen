@@ -1,0 +1,43 @@
+.kitchen-service-container {
+	display: grid;
+	height: 100vh;
+	width: 100vw;
+	grid-template-columns: 1fr;
+	grid-template-rows: 3rem auto;
+	grid-area:
+		"kitchen-display"
+		"orders-display"
+	;
+}
+
+.kitchen-display {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	grid-template-areas:
+	"display-waiter display-hour display-table display-order display-preparing display-deliver";
+}
+
+.display-waiter {
+	grid-area: display-waiter;
+}
+
+.display-hour {
+	grid-area: display-hour;
+}
+
+.display-table {
+	grid-area: display-table;
+}
+
+.display-order {
+	grid-area: display-order;
+}
+
+.display-preparing {
+	grid-area: display-preparing;
+}
+
+.display-deliver {
+	grid-area: display-deliver;
+}
