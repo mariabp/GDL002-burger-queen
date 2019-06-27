@@ -37,7 +37,7 @@ const TableOrder = (props) => {
 
 			<TotalCheck selectedTable={props.selectedTable} />
 
-			<SendOrder submitOrder={props.submitOrder} />
+			<SendOrder selectedTable={props.selectedTable} submitOrder={props.submitOrder} />
 
 		</div>
 

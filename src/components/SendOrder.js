@@ -3,7 +3,7 @@ import './SendOrder.css';
 
 const SendOrder = (props) => {
 
-	return <button className="send-order" onClick={() => props.submitOrder(props.order, props.notes)}>ENVIAR COMANDA</button>
+	return <button className="send-order" onClick={() => props.submitOrder(props.selectedTable)}>ENVIAR COMANDA</button>
 
 }
 

@@ -150,9 +150,27 @@ const App = () => {
 
 	}
 
-	const submitOrder = (order, notes) => {
-		const updateOrders = orders.concat({order: order, notes: notes});
-		setOrders(updateOrders);
+	const submitOrder = async (selectedTable) => {
+
+			const res = await fetch('/orders', {
+
+				method: 'POST',
+				headers: {'Content-Type': 'application/json'},
+				body: JSON.stringify({
+					status: 'pending',
+					order: selectedTable.pendingOrder,
+					table_id: selectedTable._id,
+					notes: selectedTable.pendingNotes,
+					createdAt: new Date(),
+					createdBy: selectedTable.waiter
+				})
+
+			});
+
+			const updatedOrders = await res.json();
+
+			setOrders(updatedOrders);
+
 	};
 
 	const selectService = (selectedService) => {
@@ -169,7 +187,7 @@ const App = () => {
 
 		} else {
 
-			return <TableService selectedTable={selectedTable} takeOrder={takeOrder} tables={tables} addProduct={addProduct} removeProduct={removeProduct} addNote={addNote} removeNote={removeNote} products={products} mealType={mealType} changeMealType={changeMealType} />
+			return <TableService selectedTable={selectedTable} takeOrder={takeOrder} tables={tables} addProduct={addProduct} removeProduct={removeProduct} addNote={addNote} removeNote={removeNote} submitOrder={submitOrder} products={products} mealType={mealType} changeMealType={changeMealType} />
 
 		}
 
