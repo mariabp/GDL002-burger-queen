@@ -20,7 +20,7 @@ const Dashboard = (props) =>{
 
 			<Notes handleNote={handleNote} />
 			<HomeButton takeOrder={props.takeOrder} />
-			<SendNote addNote={props.addNote} note={note}/>
+			<SendNote addNote={props.addNote} selectedTable={props.selectedTable} note={note}/>
 
 		</div>
 

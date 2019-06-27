@@ -3,7 +3,7 @@ import './SendNote.css';
 
 const SendNote = (props) => {
 
-		return 	<button className="send-note" onClick={props.addNote} data-note={props.note}>ENVIAR NOTA</button>
+	return 	<button className="send-note" onClick={() => props.addNote(props.selectedTable, props.note)}>ENVIAR NOTA</button>
 
 }
 

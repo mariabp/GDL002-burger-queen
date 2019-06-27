@@ -13,7 +13,7 @@ const TableOrder = (props) => {
 
 	});
 
-	let mapNotes = props.notes.map((note, index) => {
+	let mapNotes = props.selectedTable.pendingNotes.map((note, index) => {
 
 		return <AddedNote index={index} key={index} note={note} removeNote={props.removeNote} />
 

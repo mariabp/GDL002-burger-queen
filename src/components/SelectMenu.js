@@ -14,7 +14,7 @@ const SelectMenu = (props) => {
 
 			<ShowMenuItems className="menu-items" products={props.products} addProduct={props.addProduct} selectedTable={props.selectedTable} mealType={props.mealType} />
 
-			<Dashboard addNote={props.addNote} takeOrder={props.takeOrder} />
+			<Dashboard addNote={props.addNote} takeOrder={props.takeOrder} selectedTable={props.selectedTable}/>
 
 		</div>
 
