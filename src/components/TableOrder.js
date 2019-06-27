@@ -15,7 +15,7 @@ const TableOrder = (props) => {
 
 	let mapNotes = props.selectedTable.pendingNotes.map((note, index) => {
 
-		return <AddedNote index={index} key={index} note={note} removeNote={props.removeNote} />
+		return <AddedNote index={index} key={index} note={note} selectedTable={props.selectedTable} removeNote={props.removeNote} />
 
 	});
 

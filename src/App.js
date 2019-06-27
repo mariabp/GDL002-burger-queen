@@ -82,6 +82,24 @@ const App = () => {
 
 	};
 
+	const removeNote = async (selectedTable, noteIndex) => {
+
+		selectedTable.pendingNotes.splice(noteIndex, 1);
+
+		const res = await fetch(`/tables/update/${selectedTable._id}`, {
+
+			method: 'PATCH',
+			headers: {'Content-Type': 'application/json'},
+			body: JSON.stringify({data: { pendingNotes: selectedTable.pendingNotes }})
+
+		});
+
+		const updatedTables = await res.json();
+
+		setTables(updatedTables);
+
+	};
+
 	const addProduct = async (selectedTable, product) => {
 
 		selectedTable.pendingOrder.push(product);
@@ -90,7 +108,7 @@ const App = () => {
 
 			method: 'PATCH',
 			headers: {'Content-Type': 'application/json'},
-			body: JSON.stringify({data: selectedTable})
+			body: JSON.stringify({data: { pendingOrder: selectedTable.pendingOrder }})
 
 		});
 
@@ -102,15 +120,13 @@ const App = () => {
 
 	const removeProduct = async (selectedTable, orderedProductIndex) => {
 
-		const filteredOrder = selectedTable.pendingOrder.filter((product, index) => orderedProductIndex !== index ? product : null);
-
-		selectedTable.pendingOrder = filteredOrder;
+		selectedTable.pendingOrder.splice(orderedProductIndex, 1);
 
 		const res = await fetch(`/tables/update/${selectedTable._id}`, {
 
 			method: 'PATCH',
 			headers: {'Content-Type': 'application/json'},
-			body: JSON.stringify({data: selectedTable})
+			body: JSON.stringify({data: { pendingOrder: selectedTable.pendingOrder }})
 
 		});
 
@@ -153,7 +169,7 @@ const App = () => {
 
 		} else {
 
-			return <TableService selectedTable={selectedTable} takeOrder={takeOrder} tables={tables} addProduct={addProduct} removeProduct={removeProduct} addNote={addNote} products={products} mealType={mealType} changeMealType={changeMealType} />
+			return <TableService selectedTable={selectedTable} takeOrder={takeOrder} tables={tables} addProduct={addProduct} removeProduct={removeProduct} addNote={addNote} removeNote={removeNote} products={products} mealType={mealType} changeMealType={changeMealType} />
 
 		}
 

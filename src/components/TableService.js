@@ -23,6 +23,7 @@ const TableService = (props) => {
 				notes= {props.notes}
 				selectedTable={props.selectedTable}
 				removeProduct={props.removeProduct}
+				removeNote={props.removeNote}
 				submitOrder={props.submitOrder}
 			/>
 
