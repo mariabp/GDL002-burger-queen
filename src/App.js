@@ -41,6 +41,31 @@ const App = () => {
 
 	useEffect(() => {
 
+		const getOrders = async () => {
+
+			let response = await fetch('/orders');
+			let updatedOrders = await response.json();
+
+			return updatedOrders;
+
+		};
+
+		getOrders()
+
+			.then(updatedOrders => {
+
+				setOrders(updatedOrders);
+
+			})
+
+			.catch(error => console.log(error))
+
+		;
+
+	}, []);
+
+	useEffect(() => {
+
 		const getProducts = async () => {
 
 			let response = await fetch('/products');
@@ -64,21 +89,31 @@ const App = () => {
 
 	}, [mealType]);
 
+	const modifyTable = async (id, updatedData) => {
+
+		const res = await fetch(`/tables/update/${id}`, {
+
+			method: 'PATCH',
+			headers: {'Content-Type': 'application/json'},
+			body: JSON.stringify({ data: updatedData })
+
+		})
+
+		const updatedTables = await res.json();
+
+		return updatedTables;
+	}
+
 	const addNote = async (selectedTable, note) => {
 
 		selectedTable.pendingNotes.push(note);
 
-		const res = await fetch(`/tables/update/${selectedTable._id}`, {
+		modifyTable(selectedTable._id, { pendingNotes: selectedTable.pendingNotes })
 
-			method: 'PATCH',
-			headers: {'Content-Type': 'application/json'},
-			body: JSON.stringify({data:  { pendingNotes: selectedTable.pendingNotes } })
+			.then((updatedTables) => setTables(updatedTables))
 
-		});
-
-		const updatedTables = await res.json();
-
-		setTables(updatedTables);
+			.catch(err => console.log(err))
+		;
 
 	};
 
@@ -86,17 +121,12 @@ const App = () => {
 
 		selectedTable.pendingNotes.splice(noteIndex, 1);
 
-		const res = await fetch(`/tables/update/${selectedTable._id}`, {
+		modifyTable(selectedTable._id, { pendingNotes: selectedTable.pendingNotes })
 
-			method: 'PATCH',
-			headers: {'Content-Type': 'application/json'},
-			body: JSON.stringify({data: { pendingNotes: selectedTable.pendingNotes }})
+			.then((updatedTables) => setTables(updatedTables))
 
-		});
-
-		const updatedTables = await res.json();
-
-		setTables(updatedTables);
+			.catch(err => console.log(err))
+		;
 
 	};
 
@@ -104,17 +134,12 @@ const App = () => {
 
 		selectedTable.pendingOrder.push(product);
 
-		const res = await fetch(`/tables/update/${selectedTable._id}`, {
+		modifyTable(selectedTable._id, { pendingOrder: selectedTable.pendingOrder })
 
-			method: 'PATCH',
-			headers: {'Content-Type': 'application/json'},
-			body: JSON.stringify({data: { pendingOrder: selectedTable.pendingOrder }})
+			.then((updatedTables) => setTables(updatedTables))
 
-		});
-
-		const updatedTables = await res.json();
-
-		setTables(updatedTables);
+			.catch(err => console.log(err))
+		;
 
 	};
 
@@ -122,17 +147,13 @@ const App = () => {
 
 		selectedTable.pendingOrder.splice(orderedProductIndex, 1);
 
-		const res = await fetch(`/tables/update/${selectedTable._id}`, {
+		modifyTable(selectedTable._id, { pendingOrder: selectedTable.pendingOrder })
 
-			method: 'PATCH',
-			headers: {'Content-Type': 'application/json'},
-			body: JSON.stringify({data: { pendingOrder: selectedTable.pendingOrder }})
+			.then((updatedTables) => setTables(updatedTables))
 
-		});
+			.catch(err => console.log(err))
 
-		const updatedTables = await res.json();
-
-		setTables(updatedTables);
+		;
 
 	};
 
@@ -171,6 +192,17 @@ const App = () => {
 
 			setOrders(updatedOrders);
 
+			selectedTable.pendingOrder = [];
+			selectedTable.pendingNotes = [];
+
+			modifyTable(selectedTable._id, { pendingOrder: selectedTable.pendingOrder, pendingNotes: selectedTable.pendingNotes })
+
+				.then((updatedTables) => {
+					setTables(updatedTables);
+				})
+				.catch(err => console.log(err))
+
+			;
 	};
 
 	const selectService = (selectedService) => {
