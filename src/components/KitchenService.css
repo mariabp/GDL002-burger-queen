@@ -2,42 +2,98 @@
 	display: grid;
 	height: 100vh;
 	width: 100vw;
+	padding: 1rem;
+	background-color: rgb(171, 169, 169);
 	grid-template-columns: 1fr;
-	grid-template-rows: 3rem auto;
-	grid-area:
+	grid-template-rows: 3rem 1fr;
+	grid-template-areas:
 		"kitchen-display"
 		"orders-display"
 	;
 }
 
-.kitchen-display {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-	grid-template-rows: auto;
-	grid-template-areas:
-	"display-waiter display-hour display-table display-order display-preparing display-deliver";
+.orders-display {
+	grid-area: orders-display;
+
+	display: flex;
 }
 
+.kitchen-display {
+	grid-area: kitchen-display;
+	display: grid;
+	border-radius: 0.25rem;
+	grid-template-columns:2rem 3.5rem 6rem 3.5rem 30vw 5rem 5rem;
+	grid-column-gap: 0.5rem;
+	grid-template-rows: auto;
+	grid-template-areas:
+	"home-btn display-hour display-waiter display-table display-order display-preparing display-deliver";
+
+}
+.home-btn {
+	grid-area: home-btn;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
 .display-waiter {
 	grid-area: display-waiter;
+	display: flex;
+	border-radius: 0.25rem;
+	align-items: center;
+	justify-content: center;
+	padding: 0.5rem;
+	background: rgb(185, 185, 185);
 }
 
 .display-hour {
 	grid-area: display-hour;
+	display: flex;
+	border-radius: 0.25rem;
+	align-items: center;
+	justify-content: center;
+	padding: 0.5rem;
+	background: rgb(185, 185, 185);
 }
 
 .display-table {
 	grid-area: display-table;
+	display: flex;
+	border-radius: 0.25rem;
+	align-items: center;
+	justify-content: center;
+	padding: 0.5rem;
+	background: rgb(185, 185, 185);
+
 }
 
 .display-order {
 	grid-area: display-order;
+	display: flex;
+	border-radius: 0.25rem;
+	align-items: center;
+	justify-content: center;
+	padding: 0.5rem;
+	background: rgb(185, 185, 185);
+
 }
 
 .display-preparing {
 	grid-area: display-preparing;
+	display: flex;
+	border-radius: 0.25rem;
+	align-items: center;
+	justify-content: center;
+	background: rgb(185, 185, 185);
+
 }
 
 .display-deliver {
 	grid-area: display-deliver;
+	display: flex;
+	border-radius: 0.25rem;
+	align-items: center;
+	justify-content: center;
+	background: rgb(185, 185, 185);
 }
+

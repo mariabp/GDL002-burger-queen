@@ -7,7 +7,7 @@
 	grid-row-gap: 0.5rem;
 	grid-template-areas:
 		". . . . . ."
-		". to-home-btn tables-title tables-title table-id ."
+		". home-btn tables-title tables-title table-id ."
 		". show-tables show-tables show-tables . ."
 		". show-tables show-tables show-tables . ."
 		". show-tables show-tables show-tables . ."

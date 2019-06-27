@@ -225,7 +225,7 @@ const App = () => {
 
 	} else if (selectedService === 'kitchenService'){
 
-		return <KitchenService />;
+		return <KitchenService orders={orders} selectService={selectService} />;
 
 	} else {
 

@@ -1,5 +1,5 @@
 .to-home-btn {
-	grid-area: to-home-btn;
+	grid-area: home-btn;
 	display: flex;
 	border-radius: 0.25rem;
 	align-items: center;
