@@ -1,7 +1,7 @@
 import React, { useState, useEffect }from 'react';
 import './App.css';
 import KitchenService from './components/KitchenService';
-import Home from './components/Home';
+import SelectService from './components/SelectService';
 import SelectTable from './components/SelectTable';
 import TableService from './components/TableService';
 
@@ -229,7 +229,7 @@ const App = () => {
 
 	} else {
 
-		return <Home selectService={selectService} />
+		return <SelectService selectService={selectService} />
 
 	}
 
