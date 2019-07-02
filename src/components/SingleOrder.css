@@ -1,0 +1,40 @@
+.single-order-container {
+	display: block;
+	border-radius: 0.25rem;
+	grid-template-columns: 1fr 4fr 4fr 4fr 2fr 2fr;
+	grid-column-gap: 0.5rem;
+	grid-template-rows: auto auto;
+	grid-template-areas:
+	". order-date order-waiter order-table order-preparing order-deliver"
+	". items items items items items"
+	;
+}
+
+.order-date, .order-waiter, .order-table, .items {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0.25rem;
+	color: whitesmoke;
+}
+
+.order-date {
+	grid-area: order-date;
+}
+
+.order-waiter {
+	grid-area: order-waiter;
+}
+
+.order-table {
+	grid-area: order-table;
+}
+
+.items {
+	grid-area: items;
+	display: block;
+}
+
+.order-items, .order-notes {
+
+}
