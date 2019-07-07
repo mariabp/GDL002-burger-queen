@@ -2,6 +2,7 @@ import React from 'react';
 import './SingleOrder.css';
 import './KitchenService.css';
 import OrderedItem from './OrderedItem';
+import AddedNote from './AddedNote';
 
 const SingleOrder = props => {
 
@@ -11,6 +12,13 @@ const SingleOrder = props => {
 
 	});
 
+	let mapNotes = props.order.notes.map((note, index) => {
+
+		return <AddedNote key={index} note={note}  />
+
+	});
+
+
 	return (
 
 		<div className="single-order-container">
@@ -19,6 +27,9 @@ const SingleOrder = props => {
 			<div className="order-table">{props.order.table}</div>
 			<div className="items">
 				{mapOrder}
+			</div>
+			<div className="notes">
+				{mapNotes}
 			</div>
 		</div>
 
