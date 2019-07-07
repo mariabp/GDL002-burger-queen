@@ -14,7 +14,7 @@ const SingleOrder = props => {
 
 	let mapNotes = props.order.notes.map((note, index) => {
 
-		return <AddedNote key={index} note={note}  />
+		return <AddedNote key={index} note={note} kitchenService={true} />
 
 	});
 

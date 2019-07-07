@@ -15,7 +15,6 @@
 .orders-display {
 	grid-area: orders-display;
 	display: block;
-	overflow-x: scroll
 }
 
 .kitchen-display {
