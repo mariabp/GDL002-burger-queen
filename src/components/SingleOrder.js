@@ -1,5 +1,6 @@
 import React from 'react';
 import './SingleOrder.css';
+import './KitchenService.css';
 import OrderedItem from './OrderedItem';
 
 const SingleOrder = props => {
@@ -15,7 +16,7 @@ const SingleOrder = props => {
 		<div className="single-order-container">
 			<div className="order-date">{props.order.createdAt}</div>
 			<div className="order-waiter">{props.order.createdBy}</div>
-			<div className="order-table">{props.order.table_id}</div>
+			<div className="order-table">{props.order.table}</div>
 			<div className="items">
 				{mapOrder}
 			</div>

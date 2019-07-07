@@ -159,8 +159,6 @@ const App = () => {
 
 	const changeMealType = (mealType) => {
 
-		console.log(mealType);
-
 		setMealType(mealType);
 
 	};
@@ -173,6 +171,8 @@ const App = () => {
 
 	const submitOrder = async (selectedTable) => {
 
+			console.log(selectedTable.number);
+
 			const res = await fetch('/orders', {
 
 				method: 'POST',
@@ -180,7 +180,7 @@ const App = () => {
 				body: JSON.stringify({
 					status: 'pending',
 					order: selectedTable.pendingOrder,
-					table_id: selectedTable._id,
+					table: selectedTable.number,
 					notes: selectedTable.pendingNotes,
 					createdAt: new Date(),
 					createdBy: selectedTable.waiter

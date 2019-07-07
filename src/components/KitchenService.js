@@ -2,6 +2,7 @@ import React from 'react';
 import ToHomeBtn from './toHomeBtn';
 import './KitchenService.css';
 import SingleOrder from './SingleOrder'
+import './SingleOrder.css';
 
 const KitchenService = props => {
 
