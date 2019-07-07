@@ -1,35 +1,45 @@
 .single-order-container {
 	display: grid;
+	padding: 1rem;
 	border-radius: 0.25rem;
 	grid-template-columns: 1fr 4fr 4fr 2fr 4fr 2fr;
 	grid-column-gap: 0.5rem;
 	grid-template-rows: auto auto;
 	grid-template-areas:
-	". order-date order-waiter order-table order-preparing order-deliver"
-	". items notes . . ."
+	"order-delete order-date order-waiter order-table order-preparing order-deliver"
+	". items notes notes  . ."
 	;
 }
 
-.order-date, .order-waiter, .order-table, .items {
+.order-delete, .order-date, .order-waiter, .order-table, .items, .order-preparing, .order-deliver {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-radius: 0.25rem;
 	padding: 0.5rem;
 	color: whitesmoke;
+
+}
+
+.order-delete {
+	grid-area: order-delete;
 }
 
 .order-date {
 	grid-area: order-date;
-
+	background:rgb(200, 200, 200);
 }
 
 .order-waiter {
 	grid-area: order-waiter;
+	background:rgb(200, 200, 200);
+
 }
 
 .order-table {
 	grid-area: order-table;
+	background:rgb(200, 200, 200);
+
 }
 
 .items {
@@ -39,5 +49,15 @@
 
 .notes {
 	grid-area: notes;
+	margin: 0.5rem;
+}
 
+.order-preparing {
+	grid-area: order-preparing;
+	background-color: rgb(200, 200, 200);
+}
+
+.order-deliver {
+	grid-area: order-deliver;
+	background-color: rgb(200, 200, 200);
 }

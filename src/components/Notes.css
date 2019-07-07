@@ -1,5 +1,5 @@
 .notes {
-	display: flex;
+	display: block;
 	grid-area: notes;
 	padding: 0.25rem;
 	border-radius: 0.25rem;

@@ -23,6 +23,7 @@ const KitchenService = props => {
 			<div className="orders-display">
 				{mapOrders}
 			</div>
+
 		</div>
 	);
 }

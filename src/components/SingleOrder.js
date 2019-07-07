@@ -22,15 +22,22 @@ const SingleOrder = props => {
 	return (
 
 		<div className="single-order-container">
+			<i className="order-delete fas fa-trash fa-lg"></i>
 			<div className="order-date">{props.order.createdAt}</div>
 			<div className="order-waiter">{props.order.createdBy}</div>
 			<div className="order-table">{props.order.table}</div>
+
 			<div className="items">
 				{mapOrder}
 			</div>
+
 			<div className="notes">
 				{mapNotes}
 			</div>
+
+			<div className="order-preparing"></div>
+			<div className="order-deliver"></div>
+
 		</div>
 
 	)
