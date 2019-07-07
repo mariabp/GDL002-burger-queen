@@ -55,13 +55,16 @@
 .order-preparing {
 	grid-area: order-preparing;
 	background-color: rgb(200, 200, 200);
+	box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 3px;
 }
 
 .order-deliver {
 	grid-area: order-deliver;
 	background-color: rgb(200, 200, 200);
+	box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 3px;
 }
 
 i {
 	color: whitesmoke;
+	text-shadow: rgba(0, 0, 0, 0.6) 0px 0px 3px;
 }
