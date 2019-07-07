@@ -14,6 +14,8 @@ const App = () => {
 	const [selectedTable, setSelectedTable] = useState(null);
 	const [mealType, setMealType] = useState("none");
 
+
+// GET TABLES
 	useEffect(() => {
 
 		const getTables = async () => {
@@ -38,6 +40,9 @@ const App = () => {
 		;
 
 	}, []);
+
+
+// GET ORDERS
 
 	useEffect(() => {
 
@@ -64,6 +69,8 @@ const App = () => {
 
 	}, []);
 
+// GET PRODUCTS
+
 	useEffect(() => {
 
 		const getProducts = async () => {
@@ -88,6 +95,24 @@ const App = () => {
 		;
 
 	}, [mealType]);
+
+// FUNCTIONS
+
+	const removeOrder = async (id) => {
+
+		const res = await fetch (`./orders/${id}`, {
+
+			method: 'DELETE',
+			headers: {'Content-Type': 'application/json'}
+
+		})
+
+		const updatedOrders = await res.json();
+
+		setOrders(updatedOrders);
+
+		return updatedOrders;
+	}
 
 	const modifyTable = async (id, updatedData) => {
 
@@ -225,7 +250,7 @@ const App = () => {
 
 	} else if (selectedService === 'kitchenService'){
 
-		return <KitchenService orders={orders} selectService={selectService} />;
+		return <KitchenService orders={orders} selectService={selectService} removeOrder={removeOrder} />;
 
 	} else {
 

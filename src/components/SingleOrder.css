@@ -61,3 +61,7 @@
 	grid-area: order-deliver;
 	background-color: rgb(200, 200, 200);
 }
+
+i {
+	color: whitesmoke;
+}
