@@ -1,8 +1,19 @@
-.table-btn {
+.table-btn, .table-btn-preparing, .table-btn-ready {
 	display: flex;
-	background-color: rgb(151, 176, 201);
 	padding: 1.5rem;
 	margin: 1rem;
 	border-radius: 0.25rem;
 	box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 3px;
+}
+
+.table-btn {
+	background-color: rgb(151, 176, 201);
+}
+
+.table-btn-preparing {
+	background-color: rgb(219, 202, 126);
+}
+
+.table-btn-ready {
+	background-color: rgb(152, 219, 126);
 }

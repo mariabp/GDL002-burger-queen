@@ -18,10 +18,16 @@ const SingleOrder = props => {
 
 	});
 
+	let preparingClass = "order-preparing";
+
+	if (props.order.status === "preparing") {
+		preparingClass = "order-preparing-true";
+	}
+
 	return (
 
 		<div className="single-order-container">
-			<div className="order-delete" onClick={() => props.removeOrder(props.order._id)}>
+			<div className="order-delete" onClick={() => props.removeOrder(props.order)}>
 				<i className="fas fa-trash fa-lg"></i>
 			</div>
 			<div className="order-date">{props.order.createdAt}</div>
@@ -36,7 +42,7 @@ const SingleOrder = props => {
 				{mapNotes}
 			</div>
 
-			<div className="order-preparing"></div>
+			<div className={preparingClass} onClick={() => props.isPreparing(props.order)}></div>
 			<div className="order-deliver"></div>
 
 		</div>

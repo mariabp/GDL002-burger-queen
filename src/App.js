@@ -98,20 +98,26 @@ const App = () => {
 
 // FUNCTIONS
 
-	const removeOrder = async (id) => {
+	const removeOrder = async (order) => {
 
-		const res = await fetch (`./orders/${id}`, {
+		const res = await fetch (`./orders/${order._id}`, {
 
 			method: 'DELETE',
-			headers: {'Content-Type': 'application/json'}
+			headers: {'Content-Type': 'application/json'},
+			body: JSON.stringify(order)
 
 		})
 
-		const updatedOrders = await res.json();
+		const updatedData = await res.json();
 
-		setOrders(updatedOrders);
+		setOrders(updatedData.updatedOrders);
 
-		return updatedOrders;
+		if (updatedData.updatedTables) {
+
+			setTables(updatedData.updatedTables);
+
+		}
+
 	}
 
 	const modifyTable = async (id, updatedData) => {
@@ -129,7 +135,42 @@ const App = () => {
 		return updatedTables;
 	}
 
-	const addNote = async (selectedTable, note) => {
+	const modifyOrder = async (id, updatedData) => {
+
+		const res = await fetch(`/orders/update/${id}`, {
+
+			method: 'PATCH',
+			headers: {'Content-Type': 'application/json'},
+			body: JSON.stringify({ data: updatedData })
+
+		})
+
+		const updatedOrders = await res.json();
+
+		return updatedOrders;
+	}
+
+	const isPreparing = (order) => {
+
+		modifyTable(order.table_id, { isPreparing: true })
+
+			.then((updatedTables) => setTables(updatedTables))
+
+			.catch(err => console.log(err))
+
+		;
+
+		modifyOrder(order._id, { status: "preparing" })
+
+			.then((updatedOrders) => setOrders(updatedOrders))
+
+			.catch(err => console.log(err))
+
+		;
+
+	};
+
+	const addNote = (selectedTable, note) => {
 
 		selectedTable.pendingNotes.push(note);
 
@@ -142,7 +183,7 @@ const App = () => {
 
 	};
 
-	const removeNote = async (selectedTable, noteIndex) => {
+	const removeNote = (selectedTable, noteIndex) => {
 
 		selectedTable.pendingNotes.splice(noteIndex, 1);
 
@@ -155,7 +196,7 @@ const App = () => {
 
 	};
 
-	const addProduct = async (selectedTable, product) => {
+	const addProduct = (selectedTable, product) => {
 
 		selectedTable.pendingOrder.push(product);
 
@@ -168,7 +209,7 @@ const App = () => {
 
 	};
 
-	const removeProduct = async (selectedTable, orderedProductIndex) => {
+	const removeProduct = (selectedTable, orderedProductIndex) => {
 
 		selectedTable.pendingOrder.splice(orderedProductIndex, 1);
 
@@ -206,6 +247,7 @@ const App = () => {
 					status: 'pending',
 					order: selectedTable.pendingOrder,
 					table: selectedTable.number,
+					table_id: selectedTable._id,
 					notes: selectedTable.pendingNotes,
 					createdAt: new Date(),
 					createdBy: selectedTable.waiter
@@ -250,7 +292,7 @@ const App = () => {
 
 	} else if (selectedService === 'kitchenService'){
 
-		return <KitchenService orders={orders} selectService={selectService} removeOrder={removeOrder} />;
+		return <KitchenService orders={orders} selectService={selectService} removeOrder={removeOrder} isPreparing={isPreparing} />;
 
 	} else {
 

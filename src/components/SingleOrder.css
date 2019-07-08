@@ -52,10 +52,18 @@
 	margin: 0.5rem;
 }
 
-.order-preparing {
+.order-preparing, .order-preparing-true {
 	grid-area: order-preparing;
-	background-color: rgb(200, 200, 200);
 	box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 3px;
+}
+
+.order-preparing {
+	background-color: rgb(200, 200, 200);
+}
+
+.order-preparing-true {
+	background-color: rgb(219, 202, 126);
+	border-radius: 0.25rem;
 }
 
 .order-deliver {
