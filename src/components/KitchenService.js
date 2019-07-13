@@ -7,7 +7,7 @@ import './SingleOrder.css';
 const KitchenService = props => {
 
 	let mapOrders = props.orders.map(order => {
-		return <SingleOrder key={order._id} order={order} removeOrder={props.removeOrder} isPreparing={props.isPreparing} />
+		return <SingleOrder key={order._id} order={order} removeOrder={props.removeOrder} isPreparing={props.isPreparing} isReady={props.isReady} />
 	})
 
 	return (

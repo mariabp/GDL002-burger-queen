@@ -24,6 +24,12 @@ const SingleOrder = props => {
 		preparingClass = "order-preparing-true";
 	}
 
+	let readyClass = "order-deliver";
+
+	if (props.order.status === "ready") {
+		readyClass = "order-ready";
+	}
+
 	return (
 
 		<div className="single-order-container">
@@ -43,7 +49,7 @@ const SingleOrder = props => {
 			</div>
 
 			<div className={preparingClass} onClick={() => props.isPreparing(props.order)}></div>
-			<div className="order-deliver"></div>
+			<div className={readyClass} onClick={() => props.isReady(props.order)}></div>
 
 		</div>
 

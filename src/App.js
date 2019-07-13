@@ -29,11 +29,7 @@ const App = () => {
 
 		getTables()
 
-			.then(updatedTables => {
-
-				setTables(updatedTables);
-
-			})
+			.then(updatedTables => { setTables(updatedTables); })
 
 			.catch(error => console.log(error))
 
@@ -57,11 +53,7 @@ const App = () => {
 
 		getOrders()
 
-			.then(updatedOrders => {
-
-				setOrders(updatedOrders);
-
-			})
+			.then(updatedOrders => { setOrders(updatedOrders); })
 
 			.catch(error => console.log(error))
 
@@ -84,11 +76,7 @@ const App = () => {
 
 		getProducts()
 
-			.then(updatedProducts => {
-
-				setProducts(updatedProducts);
-
-			})
+			.then(updatedProducts => { setProducts(updatedProducts); })
 
 			.catch(error => console.log(error))
 
@@ -148,6 +136,7 @@ const App = () => {
 		const updatedOrders = await res.json();
 
 		return updatedOrders;
+
 	}
 
 	const isPreparing = (order) => {
@@ -161,6 +150,27 @@ const App = () => {
 		;
 
 		modifyOrder(order._id, { status: "preparing" })
+
+			.then((updatedOrders) => setOrders(updatedOrders))
+
+			.catch(err => console.log(err))
+
+		;
+
+	};
+
+
+	const isReady = (order) => {
+
+		modifyTable(order.table_id, { isReady: true })
+
+			.then((updatedTables) => setTables(updatedTables))
+
+			.catch(err => console.log(err))
+
+		;
+
+		modifyOrder(order._id, { status: "ready" })
 
 			.then((updatedOrders) => setOrders(updatedOrders))
 
@@ -292,7 +302,7 @@ const App = () => {
 
 	} else if (selectedService === 'kitchenService'){
 
-		return <KitchenService orders={orders} selectService={selectService} removeOrder={removeOrder} isPreparing={isPreparing} />;
+		return <KitchenService orders={orders} selectService={selectService} removeOrder={removeOrder} isPreparing={isPreparing} isReady={isReady} />;
 
 	} else {
 
