@@ -13,13 +13,25 @@ const Table = (props) => {
 		selectedClass = "table-btn-ready";
 	}
 
-	return 	(
-		<React.Fragment>
+	if (props.table.isReady) {
+
+		return (
+			<React.Fragment>
+				<button className={selectedClass} onClick={() => props.takeOrder(props.table) }>MESA {props.table.number}</button>
+				<ReadyBtn deliverOrder={props.deliverOrder} table={props.table} />
+			</React.Fragment>
+			)
+		;
+
+	} else {
+
+		return 	(
+
 			<button className={selectedClass} onClick={() => props.takeOrder(props.table) }>MESA {props.table.number}</button>
-			<ReadyBtn deliverOrder={props.deliverOrder} table={props.table} />
-		</React.Fragment>
+
 		);
 
+	}
 }
 
 export default Table;
