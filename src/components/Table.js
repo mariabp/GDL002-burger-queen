@@ -1,5 +1,7 @@
 import React from 'react';
 import './Table.css'
+import ReadyBtn from './ReadyBtn';
+
 
 const Table = (props) => {
 
@@ -11,7 +13,12 @@ const Table = (props) => {
 		selectedClass = "table-btn-ready";
 	}
 
-	return 	(<button className={selectedClass} onClick={() => props.takeOrder(props.table) }>MESA {props.table.number}</button>);
+	return 	(
+		<React.Fragment>
+			<button className={selectedClass} onClick={() => props.takeOrder(props.table) }>MESA {props.table.number}</button>
+			<ReadyBtn deliverOrder={props.deliverOrder} table={props.table} />
+		</React.Fragment>
+		);
 
 }
 

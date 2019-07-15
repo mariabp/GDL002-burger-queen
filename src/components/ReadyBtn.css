@@ -1,0 +1,13 @@
+.ready-btn {
+
+	display: flex;
+	grid-area: ready-btn;
+	align-items: center;
+	justify-content: center;
+
+}
+
+i {
+	color: whitesmoke;
+	text-shadow: rgba(0, 0, 0, 0.6) 0px 0px 3px;
+}

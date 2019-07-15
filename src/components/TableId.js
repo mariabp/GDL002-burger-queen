@@ -3,7 +3,7 @@ import './TableId.css';
 
 const TableId = (props) => {
 
-	let tableNumber = 'SELECIONA UNA MESA'
+	let tableNumber = 'SELECCIONA UNA MESA'
 
 	if (props.selectedTable) {
 

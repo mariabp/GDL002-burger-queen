@@ -27,7 +27,7 @@ const SingleOrder = props => {
 	let readyClass = "order-deliver";
 
 	if (props.order.status === "ready") {
-		readyClass = "order-ready";
+		readyClass = "order-ready-true";
 	}
 
 	return (

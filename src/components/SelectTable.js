@@ -12,7 +12,7 @@ const SelectTable = props => {
 				<ToHomeBtn selectService={props.selectService} />
 				<div className="tables-title">BURGER QUEEN</div>
 				<TableId />
-				<ShowTables tables={props.tables} takeOrder={props.takeOrder} />
+				<ShowTables tables={props.tables} takeOrder={props.takeOrder} deliverOrder={props.deliverOrder} />
 			</div>
 		)
 

@@ -72,9 +72,9 @@
 	box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 3px;
 }
 
-.order-ready {
+.order-ready-true {
 	grid-area: order-deliver;
-	background-color: rgb(152, 219, 126);
+	background-color: rgb(146, 202, 123);
 	border-radius: 0.25rem;
 }
 

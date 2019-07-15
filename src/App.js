@@ -139,9 +139,21 @@ const App = () => {
 
 	}
 
+	const deliverOrder = (table) => {
+
+		modifyTable(table._id, { isReady: false })
+
+		.then((updatedTables) => setTables(updatedTables))
+
+		.catch(err => console.log(err))
+
+	;
+
+	}
+
 	const isPreparing = (order) => {
 
-		modifyTable(order.table_id, { isPreparing: true })
+		modifyTable(order.table_id, { isPreparing: true, isReady: false })
 
 			.then((updatedTables) => setTables(updatedTables))
 
@@ -159,10 +171,9 @@ const App = () => {
 
 	};
 
-
 	const isReady = (order) => {
 
-		modifyTable(order.table_id, { isReady: true })
+		modifyTable(order.table_id, { isPreparing: false, isReady: true })
 
 			.then((updatedTables) => setTables(updatedTables))
 
@@ -292,7 +303,7 @@ const App = () => {
 
 		if (selectedTable === null) {
 
-			return <SelectTable selectService={selectService} submitOrder={submitOrder} tables={tables} takeOrder={takeOrder} />;
+			return <SelectTable selectService={selectService} submitOrder={submitOrder} tables={tables} takeOrder={takeOrder} deliverOrder={deliverOrder}/>;
 
 		} else {
 
