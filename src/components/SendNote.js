@@ -1,11 +1,11 @@
 import React from 'react';
 import './SendNote.css';
 
-const SendNote = (props) => {
+const SendNote = (props) => (
 
-	return 	<button className="send-note" onClick={() => props.addNote(props.selectedTable, props.note)}>ENVIAR NOTA</button>
+	<button className="send-note" onClick={() => props.addNote(props.selectedTable, props.note)}>ENVIAR NOTA</button>
 
-}
+)
 
 
 
